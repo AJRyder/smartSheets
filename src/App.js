@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Sidebar from "react-sidebar";
 import { Route, Switch } from 'react-router-dom'
 
 import NavBar from './components/NavBar'
 import SignInWithGoogle from './components/SignInWithGoogle'
 import SignUpWithEmailPassWord from './components/SignUpWithEmailPassword'
-
+import Login from './components/Login'
+import ResetPassword from './components/ResetPassword'
 import * as ROUTES from './constants/routes'
 import { firebase, doAddFile, auth, doSignOut, doSignInWithEmailAndPassWord } from './firebase/firebase'
 
@@ -27,6 +29,7 @@ class App extends Component {
           'Content-Type': 'application/json'
         }
       })
+      console.log(this.state.currentUser._id)
       const updatedUserJSon = await updatedUser.json()
       this.doSetCurrentUser(updatedUserJSon)
     })
@@ -58,21 +61,23 @@ class App extends Component {
         <NavBar />
         {
           currentUser
-          ? <div> 
+          ? <div>
               {currentUser.displayName}
               <button onClick={doSignOut}>Sign Out</button>
               <img src={currentUser.imgUrl} />
             </div>
+            
           : null
         }
-        <h1>Hey I'm the app page</h1>
+        <h1>Hello {this.state.message}!</h1>
+        <h1>Hey Dude!</h1>
         <input type='file' onChange={this.addProfilePicture} accept='image/*'/>
         <SignInWithGoogle doSetCurrentUser={this.doSetCurrentUser}/>
         <Switch>
           <Route exact path={ROUTES.HOME} render={() => <div>home</div>}/>
-          {/* <Route exact path={ROUTES.LOGIN} render={() => <div>login</div>}/> */}
+          <Route exact path={ROUTES.LOGIN} component={Login}/>
+          <Route exact path={ROUTES.RESETPWD} component={ResetPassword}/>
           <Route exact path={ROUTES.SIGN_UP} component={SignUpWithEmailPassWord}/>
-         
         </Switch>  
       </div>
     );

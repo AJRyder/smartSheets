@@ -9,7 +9,7 @@ const config = {
     projectId: process.env.REACT_APP_PROJECT_ID,
     storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  };
+};
 
 const firebase = app.initializeApp(config)
 const auth = firebase.auth()
@@ -17,30 +17,26 @@ const googleProvider = new app.auth.GoogleAuthProvider()
 const storage = firebase.storage()
 const storageRef = storage.ref()
 
-const doSignInWithGoogle = () => 
-  auth.signInWithPopup(googleProvider)
-
-const doAddFile = file => 
-  storageRef
-    .child(`profilePics/${file.name}`)
-    .put(file)
-
+const doSignInWithGoogle = () => {
+    return auth.signInWithPopup(googleProvider)
+}
+const doAddFile = file =>
+    storageRef
+        .child(`profilePics/${file.name}`)
+        .put(file)
 const doCreateUserWithEmailAndPassword = (email, password) =>
     auth.createUserWithEmailAndPassword(email, password);
-
 const doSignOut = () => auth.signOut()
-
-const doSignInWithEmailAndPassWord = (email, password)=>
-  this.auth.doSignInWithEmailAndPassWord(email, password);
-
-export { 
+const doSignInWithEmailAndPassword = (email, password) =>
+    auth.signInWithEmailAndPassword(email, password);
+const doPasswordReset = email => auth.sendPasswordResetEmail(email)
+export {
     firebase,
-    doSignInWithGoogle, 
-    doAddFile, 
-    doCreateUserWithEmailAndPassword, 
-    auth, 
-    doSignOut, 
-    doSignInWithEmailAndPassWord
-
-    
+    doSignInWithGoogle,
+    doAddFile,
+    doCreateUserWithEmailAndPassword,
+    doSignInWithEmailAndPassword,
+    doPasswordReset,
+    auth,
+    doSignOut
 }
