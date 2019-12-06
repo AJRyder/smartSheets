@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     displayName: String, 
-    username: { String, unique=true }, 
-    email: { String, unique=true },
+    username: String, 
+    email: String,
     password: String, 
     avatar: String, 
     productionsList: [{
