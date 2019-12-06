@@ -11,11 +11,24 @@ class App extends Component {
     message: '', 
     currentUser: null 
   }
-  return (
-    <div className="App">
-   
-    </div>
-  );
+  render() {
+    const { currentUser } = this.state
+
+    return (
+      <div className="App">
+        <NavBar />
+        {
+          currentUser
+          ? currentUser.displayName
+          : null
+        }
+        <h1>Hey Dude!</h1>
+        <Switch>
+          
+        </Switch>  
+      </div>
+    );
+}
 }
 
 export default App;

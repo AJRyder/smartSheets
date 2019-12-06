@@ -10,13 +10,12 @@ const talentSchema = new Schema({
     }, 
     avatar: String, 
     role: String, 
-    swfStatus: String, 
     callTimes: { 
         pickUp: String, 
         call: String, 
         onSet: String, 
     }, 
-    isBackgroundTalent: Boolean
+    isBackground: Boolean
 })
 
 const Talent = mongoose.model('Talents', talentSchema)

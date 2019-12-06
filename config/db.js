@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost/mern';
+const connectionString = 'mongodb://localhost/smartSheets';
 
 mongoose.connect(connectionString, { useNewUrlParser: true,
                                      useUnifiedTopology: true,

@@ -13,11 +13,6 @@ const productionsSchema = new Schema({
         phone: String, 
         logo: String
     },
-    agency: { 
-        name: String, 
-        phoneNum: String, 
-        logo: String
-    },
     poc: { 
         name: String, 
         phoneNum: String, 

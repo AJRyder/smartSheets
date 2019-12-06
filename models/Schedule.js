@@ -5,8 +5,7 @@ const scheduleSchema = new Schema({
     time: String, 
     sceneNum: String, 
     description: String, 
-    DorN: String, 
-    
+    DorN: String,     
 })
 
 const Schedule = mongoose.model('Schedules', scheduleSchema)
