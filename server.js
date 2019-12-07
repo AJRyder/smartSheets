@@ -11,6 +11,9 @@ app.use(express.static(path.join(__dirname, 'build')))
 app.use(express.json())
 
 app.use('/auth', userController)
+app.use('/auth', callSheetController)
+app.use('/auth', productionController)
+
 app.get('/hello', (req, res) => { 
     res.json({ message: 'World' })
 })

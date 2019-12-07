@@ -16,7 +16,7 @@ router.post('/callsheets', async (req, res) => {
 });
 router.put('/callsheets/:userId', async (req, res) => {
     console.log(req.body)
-    const updatedCallSheet = await CallSheet.findByIdAndUpdate(req.params.callsheetId, req.body, {new:true})
+    const updatedCallSheet = await CallSheet.findByIdAndUpdate(req.params.callSheetId, req.body, {new:true})
     res.json(updatedCallSheet)
 
 });

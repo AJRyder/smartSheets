@@ -4,8 +4,16 @@ import { ClipLoader } from 'react-spinners'
 
 import {CALLSHEETS} from '../../constants/routes'
 
-const CallSheets = () => {
+function CallSheets(props) {
+    const callSheets = props.callSheets.map((callsheet) => {
+        return( 
+            <div key={callsheet.id}></div>
+                <div className="CallSheetContent">
+                    
+                </div>
+        )
+    })
+ }
     
-}
 
 export default CallSheets

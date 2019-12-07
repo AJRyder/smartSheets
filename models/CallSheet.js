@@ -20,7 +20,7 @@ const callSheetSchema = new Schema({
     }, 
 
     talent: {
-        talentId: Number, 
+        talentId: String, 
         avatar: String, 
         role: String, 
         isBgTalent: Boolean,
@@ -39,13 +39,12 @@ const callSheetSchema = new Schema({
     },
 
     schedule: { 
-        callTime: String, 
         time: String, 
         sceneNum: String, 
         description: String, 
         DorN: String,  
     },
-    
+
     shootLocations: { 
         name: String, 
         address: String, 
