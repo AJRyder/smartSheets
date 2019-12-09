@@ -5,7 +5,7 @@ const callSheetSchema = new Schema({
     crew: { 
         department: String, 
         position: String,
-
+        callTimes: String, 
         contact: { 
             name: String, 
             phoneNum: String, 

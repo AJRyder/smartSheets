@@ -7,8 +7,15 @@ import SignInWithGoogle from './components/SignInWithGoogle'
 import SignUpWithEmailPassWord from './components/SignUpWithEmailPassword'
 import Login from './components/Login'
 import ResetPassword from './components/ResetPassword'
+
+import CallSheetContainer from './components/CallSheetContainer'
+import CallSheetList from './components/CallSheetList';
+
 import * as ROUTES from './constants/routes'
 import { firebase, doAddFile, auth, doSignOut, doSignInWithEmailAndPassWord } from './firebase/firebase'
+
+
+
 
 import './App.css';
 
@@ -71,13 +78,19 @@ class App extends Component {
         }
         <h1>Hello {this.state.message}!</h1>
         <h1>Hey Dude!</h1>
+     
+
         <input type='file' onChange={this.addProfilePicture} accept='image/*'/>
         <SignInWithGoogle doSetCurrentUser={this.doSetCurrentUser}/>
+        <h1>gwlo</h1>
+        <CallSheetList />
         <Switch>
           <Route exact path={ROUTES.HOME} render={() => <div>home</div>}/>
           <Route exact path={ROUTES.LOGIN} component={Login}/>
           <Route exact path={ROUTES.RESETPWD} component={ResetPassword}/>
           <Route exact path={ROUTES.SIGN_UP} component={SignUpWithEmailPassWord}/>
+
+          <Route exact path={ROUTES.CALLSHEETS} component={CallSheetContainer}/>
         </Switch>  
       </div>
     );

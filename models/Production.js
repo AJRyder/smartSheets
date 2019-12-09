@@ -2,18 +2,18 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema; 
 
 const productionSchema = new Schema({
-    production: {
+    info: {
         title: String, 
-        type: String, 
+        mediaType: String, 
         logo: String,
         days: Number, 
-        dayOutOfDays: Number, 
+        dOOD: Number, 
     },
 
     productionCo: { 
         name: String, 
         address: String, 
-        phone: String, 
+        phoneNum: String, 
         logo: String
     },
 
@@ -29,12 +29,6 @@ const productionSchema = new Schema({
         secondMeal: String, 
         estimatedWrap: String
     },
-
-    collaborators: [{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Users'
-    }], 
-
     callSheetList: [{
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'CallSheets'

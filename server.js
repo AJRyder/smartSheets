@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 8000
 require('./config/db')
 
 const userController = require('./controllers/users')
+const callSheetController = require('./controllers/CallSheets')
+const productionController = require('./controllers/Productions')
 
 app.use(express.static(path.join(__dirname, 'build')))
 app.use(express.json())

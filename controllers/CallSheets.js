@@ -22,7 +22,7 @@ router.put('/callsheets/:userId', async (req, res) => {
 });
 router.delete('/callsheets/:userId', (req, res) => {
     return res.send(
-        `DELETE HTTP method on user/${req.params.userId} resource`,
+        `DELETE HTTP method on user/${req.params.callSheetId} resource`,
     );
 });
 

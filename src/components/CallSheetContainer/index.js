@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import CallSheetList from '../CallSheetList';
 import CreateCallSheetForm from '../CreateCallSheetForm';
-import EditCallSheetModal from '../EditCallSheetModal'
+
 
 class CallSheetContainer extends Component { 
-    state = {
+    state =  {
         callSheets: [], 
         callSheetToEdit: { 
             crew: { 
@@ -121,13 +121,7 @@ class CallSheetContainer extends Component {
                         'Content-Type': 'application/json'
                     }
                 });
-                const editResponseParsed = await fetch(process.env.REACT_APP_API_URL + '/auth/callsheets/' + this.state.callSheetToEdit.id, { 
-                    method: 'PUT', 
-                    body: JSON.stringify(this.state.callSheetToEdit), 
-                    headers: { 
-                        'Content-Type': 'application/json'
-                    }
-                });
+              
                 const editResponseParsed = await editResponse.json();
                 console.log(editResponseParsed, ' parsed edit')
 
@@ -167,7 +161,7 @@ class CallSheetContainer extends Component {
             <div>
                 <CallSheetList callSheets={this.state.callSheets} deleteCallSheet={this.deleteCallSheet} openAndEdit={this.openAndEdit}/>
                 <CreateCallSheetForm addCallSheet={this.addCallSheet}/>
-                <EditCallSheetModal handleEditChange={this.handleEditChange} open={this.state.showEditModal} callSheetToEdit={this.state.callSheetToEdit} closeAndEdit={this.closeAndEdit}/>
+                {/* <EditCallSheetModal handleEditChange={this.handleEditChange} open={this.state.showEditModal} callSheetToEdit={this.state.callSheetToEdit} closeAndEdit={this.closeAndEdit}/> */}
             </div> 
 
         )

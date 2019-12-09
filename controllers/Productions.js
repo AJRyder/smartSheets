@@ -22,7 +22,7 @@ router.put('/productions/:userId', async (req, res) => {
 });
 router.delete('/productions/:userId', (req, res) => {
     return res.send(
-        `DELETE HTTP method on user/${req.params.userId} resource`,
+        `DELETE HTTP method on user/${req.params.productionId} resource`,
     );
 });
 
