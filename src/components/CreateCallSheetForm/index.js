@@ -1,13 +1,9 @@
 import React, {Component} from 'react'; 
-import ReactDataSheet from 'react-datasheet'
+import ReactDataGrid from 'react-data-grid'
 import 'react-datasheet/lib/react-datasheet.css'
 
 class CreateCallSheet extends Component { 
     state = { 
-        grid: [
-            [{value:  1}, {value:  3}],
-            [{value:  2}, {value:  4}]
-          ],
         crew: { 
             department: '',
             position: '', 
@@ -58,238 +54,260 @@ class CreateCallSheet extends Component {
         },
     }
     handleChange = (e) => { 
-        this.setState({[e.currentTarget.name]: e.currentTarget.value})
+        this.setState({
+            [e.currentTarget.name]: e.currentTarget.value
+        })
     }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.addCallSheet(this.state)
+    }
+
     render(){
         return(
         <div className="Create-CallSheet-Container">
-            <ReactDataSheet
-                data={this.state.grid}
-                valueRenderer={(cell) => cell.value}
-                onCellsChanged={changes => {
-                    const grid = this.state.grid.map(row => [...row])
-                    changes.forEach(({cell, row, col, value}) => {
-                        grid[row][col] = {...grid[row][col], value}
-                    })
-                    this.setState({grid})
-                    }}
-            />
+        
             <h4>Create a New CallSheet</h4>
-            <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
+            <form onSubmit={this.handleSubmit}>
                 <segment className="create-crew">
                     <label><strong>Crew Overview</strong></label><br/>
                     <label>Department</label>
                     <input 
                         type="text" 
-                        name="department" 
-                        value={this.state.crew.department} placeholder="Crew Department"
+                        name="crew.department" 
+                        placeholder="Crew Department"
+                        onChange={this.handleChange}
                     />
                     <label>Position</label>
                     <input 
                         type="text" 
-                        name="position" 
-                        value={this.state.crew.department}
+                        name="crew.position" 
                         placeholder="Crew Position"
+                        onChange={this.handleChange}
                     />
                     <label>Crew Call Time</label>
                     <input 
                         type="text"
-                        name="callTimes"
-                        value={this.state.crew.callTimes}
+                        name="crew.callTimes"
                         placeholder="Call Time"
-                    />    
-                    <label>--Crew Contact Info--</label><br/>
+                        onChange={this.handleChange}
+                    /><br/>    
+                    <label><strong>Crew Contact Info</strong></label><br/>
                     <label>Crew Name</label>
                     <input 
                         type="text" 
-                        name="name" 
-                        value={this.state.crew.contact.name}
+                        name="crew.contact.name" 
                         placeholder="Crew Name"
+                        onChange={this.handleChange}
                     />
                     <label>Crew Phone</label>
                     <input 
                         type="text" 
-                        name="phoneNum" 
-                        value={this.state.crew.contact.phone}
+                        name="crew.contact.phoneNum" 
                         placeholder="Crew Phone #"
+                        onChange={this.handleChange}
                     />
                     <label>Crew Email</label>
                     <input 
                         type="text" 
-                        name="email" 
-                        value={this.state.crew.contact.email}
+                        name="crew.contact.email" 
                         placeholder="Crew Email"
+                        onChange={this.handleChange}
                     />
-                </segment>
+                </segment><br/>
 
                 <segment className="create-client">
                     <label><strong>Client Overview</strong></label><br/>
                     <label>Client Name</label>
                     <input 
                         type="text" 
-                        name="Position" 
-                        value={this.state.client.agency}
+                        name="client.agency" 
                         placeholder="Agency Name"
+                        onChange={this.handleChange}
                     />
                     <label>Client Rep.</label>
                     <input 
                         type="text" 
-                        name="Position" 
-                        value={this.state.client.name}
+                        name="client.name" 
                         placeholder="Client Rep Name"
+                        onChange={this.handleChange}
                     />
                     <label>Client Phone</label>
                     <input 
                         type="text" 
-                        name="Position" 
-                        value={this.state.client.phoneNum}
+                        name="client.phoneNum" 
                         placeholder="Client Phone #"
+                        onChange={this.handleChange}
                     />
-                </segment>
+                </segment><br/>
 
                 <segment className="create-talent">
                     <label><strong>Talent</strong></label><br/>
                     <label>Talent Id</label>  
                     <input 
                         type="text" 
-                        name="talentId" 
-                        value={this.state.talent.talentId}
+                        name="talent.talentId" 
                         placeholder="Talent Id #"
+                        onChange={this.handleChange}
                     />
                     <label>Talent Avatar</label>
                     <input 
                         type="text" 
-                        name="avatar" 
-                        value={this.state.talent.avatar}
+                        name="talent.avatar" 
                         placeholder="place avatar url here"
+                        onChange={this.handleChange}
                     />
                      <label>Role</label>
                     <input 
                         type="text" 
-                        name="role" 
-                        value={this.state.talent.role}
+                        name="talent.role" 
                         placeholder="role"
-                    />
+                        onChange={this.handleChange}
+                    /><br/>
                      <label>Background Talent?</label>
                     <input 
                         type="text" 
-                        name="isBgTalent" 
-                        value={this.state.talent.isBgTalent}
+                        name="talent.isBgTalent" 
                         placeholder="Is Background Talent?"
-                    />
-                    <label>--Talent Call Times--</label><br/>
-                    <label>Pick Up Time</label>
+                        onChange={this.handleChange}
+                    /><br/>
+                    <label><strong>--Talent Call Times--</strong></label><br/>
+                    <label>Talent Pick Up Time</label>
                     <input 
                         type="text" 
-                        name="pickUp" 
-                        value={this.state.talent.callTimes.pickUp}
+                        name="talent.callTimes.pickUp" 
                         placeholder="Pick Up Time"
+                        onChange={this.handleChange}
                     />
-                      <label> Call Time</label>
+                    <label> Talent Call Time</label>
                     <input 
                         type="text" 
-                        name="call" 
-                        value={this.state.talent.callTimes.call}
+                        name="talent.callTimes.call" 
                         placeholder="Call Time"
+                        onChange={this.handleChange}
                     />
-                      <label>On Set Time</label>
+                      <label>Talent On Set Time</label>
                     <input 
                         type="text" 
-                        name="onSet" 
-                        value={this.state.talent.callTimes.onSet}
+                        name="talent.callTimes.onSet"
                         placeholder="On Set Time"
+                        onChange={this.handleChange}
                     />
-                </segment>    
+                    <label><strong>Talent Contact</strong></label> 
+                    <label>Talent Name</label>
+                    <input
+                        type="text"
+                        name="talent.contact.name"
+                        placeholder="Talent Name"
+                        onChange={this.handleChange}
+                    />
+                    <label>Talent Phone Number</label>
+                    <input
+                        type="text"
+                        name="talent.contact.phoneNum"
+                        placeholder="Talent Phone #"
+                        onChange={this.handleChange}
+                    />
+                      <label>Talent Email</label>
+                    <input
+                        type="text"
+                        name="talent.contact.email"
+                        placeholder="Talent Email"
+                        onChange={this.handleChange}
+                    />
+                </segment> 
+
                 <segment className="create-schedule">
                     <label><strong>Shooting Schedule</strong></label><br/>
                     <label>Schedule Time</label>
                     <input 
                         type="text" 
-                        name="time" 
-                        value={this.state.schedule.time}
+                        name="schedule.time" 
                         placeholder="Time"
+                        onChange={this.handleChange}
                     />
                     <label>Scene Number</label>
                     <input 
                         type="text" 
-                        name="sceneNum" 
-                        value={this.state.schedule.sceneNum}
+                        name="schedule.sceneNum" 
                         placeholder="Scene Number"
+                        onChange={this.handleChange}
                     />
                     <label>Scene Description</label>
                     <input 
                         type="text" 
-                        name="description" 
-                        value={this.state.schedule.description}
+                        name="schedule.description" 
                         placeholder="Scene Description"
+                        onChange={this.handleChange}
                     />
                     <label>Day or Night</label>
                     <input 
                         type="text" 
-                        name="DorN" 
-                        value={this.state.schedule.DorN}
+                        name="schedule.DorN" 
                         placeholder="Day/Night"
+                        onChange={this.handleChange}
                     />
-                </segment>
-                <segment className="shoot-location-overview"><strong>Shooting Location Overview</strong>
+                </segment><br/>
+                <segment className="shoot-location-overview"><strong>Shooting Location Overview</strong><br/>
                     <label>Location Name</label>
                     <input
                         type="text"
-                        name="name"
-                        value={this.state.shootLocations.name}
+                        name="shootLocations.name"
                         placeholder="Location Name"
+                        onChange={this.handleChange}
                     />
                     <label>Location Address</label>
                     <input
                         type="text"
-                        name="address"
-                        value={this.state.shootLocations.address}
+                        name="shootLocations.address"
                         placeholder="Location Address"
+                        onChange={this.handleChange}
                     />
                     <label>Location Phone Number</label>
                     <input
                         type="text"
-                        name="phoneNum"
-                        value={this.state.shootLocations.phoneNum}
+                        name="shootLocations.phoneNum"
                         placeholder="Location Phone #"
+                        onChange={this.handleChange}
                     />
                     <label>Parking Address</label>
                     <input
                         type="text"
-                        name="parking"
-                        value={this.state.shootLocations.parking}
+                        name="shootLocations.parking"
                         placeholder="Parking Address"
+                        onChange={this.handleChange}
                     />
                     <label>Parking Notes</label>
                     <input
                         type="text"
-                        name="parkingNotes"
-                        value={this.state.shootLocations.parkingNotes}
+                        name="shootLocations.parkingNotes"
                         placeholder="Parking Notes"
-                    />
+                        onChange={this.handleChange}
+                    /><br/>
                     <label><strong>Hospital Info</strong></label><br/>
                     <label>Hospital Name</label>
                     <input
                         type="text"
-                        name="name"
-                        value={this.state.shootLocations.nearestHospital.name}
+                        name="shootLocations.nearestHospital.name"
                         placeholder="Hospital Name"
+                        onChange={this.handleChange}
                     />
                     <label>Hospital Address</label>
                     <input
                         type="text"
-                        name="address"
-                        value={this.state.shootLocations.nearestHospital.address}
+                        name="shootLocations.nearestHospital.address"
                         placeholder="Hospital Address"
+                        onChange={this.handleChange}
                     />
                     <label>Hospital Phone Number</label>
                     <input
                         type="text"
-                        name="phoneNum"
-                        value={this.state.shootLocations.nearestHospital.phoneNum}
+                        name="shootingLocations.nearestHospital.phoneNum"
                         placeholder="Hospital Phone #"
+                        onChange={this.handleChange}
                         />
-                </segment>
+                </segment><br/>
                 <button type='Submit'>Create CallSheet</button>
             </form>
         </div>    

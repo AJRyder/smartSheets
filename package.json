@@ -13,6 +13,7 @@
     "firebase": "^7.5.0",
     "mongoose": "^5.7.14",
     "react": "^16.12.0",
+    "react-data-grid": "^6.1.0",
     "react-datasheet": "^1.4.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",

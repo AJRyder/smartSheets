@@ -54,7 +54,18 @@ class CallSheetContainer extends Component {
                     address: '', 
                     phoneNum: ''
                 }
-            }, 
+            },
+            quickRefTimes: {
+                crewCall: '', 
+                shootingCall: '', 
+                lunch: '', 
+                secondMeal: '', 
+                estimatedWrap: ''
+            },
+            dayCount: {
+                totalDays: '', 
+                dOOD: '',
+            },
             showEditModal: false
         } 
     } //end of callsheet state
@@ -80,8 +91,7 @@ class CallSheetContainer extends Component {
         }
     }
 
-    addCallSheet = async (e, callSheet) => { 
-        e.preventDefault(); 
+    addCallSheet = async (callSheet) => { 
         console.log(callSheet);
         try { 
             const createdCallSheetResponse = await fetch(process.env.REACT_APP_API_URL + '/auth/callsheets/'

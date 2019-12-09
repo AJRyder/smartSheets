@@ -56,7 +56,21 @@ const callSheetSchema = new Schema({
             address: String, 
             phoneNum: String, 
         }
+    }, 
+
+    quickRefTimes: {
+        crewCall: String, 
+        shootingCall: String, 
+        lunch: String, 
+        secondMeal: String, 
+        estimatedWrap: String
+    },
+    
+    dayCount: {
+        totalDays: String, 
+        dOOD: String,
     }
+
 })
 
 const CallSheet = mongoose.model('CallSheets', callSheetSchema)

@@ -5,9 +5,7 @@ class CreateProductionForm extends Component {
         info: {
             title: '', 
             type: '', 
-            logo: '',
-            days: '', 
-            dayOutOfDays: '', 
+            logo: '' 
         },
     
         productionCo: { 
@@ -21,60 +19,44 @@ class CreateProductionForm extends Component {
             name: '', 
             phoneNum: '', 
         },
-    
-        quickRefTimes: {
-            crewCall: '', 
-            shootingCall: '', 
-            lunch: '', 
-            secondMeal: '', 
-            estimatedWrap: ''
-        },
         callSheetList: []
     }
     handleChange = (e) => { 
-        this.setState({[e.currentTarget.name]: e.currentTarget.value})
+        this.setState({
+            [e.currentTarget.name]: e.currentTarget.value
+        })
+    }
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.addProduction(this.state)
     }
     render() {
         return(
             <div className="Create-Production-Container">
             <h4>Create a New Production</h4>
-            <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
+            <form onSubmit={this.handleSubmit}>
                 <segment className="create-production">
                     <label><strong>Production Overview</strong></label><br/>
                     <label>Production Title</label>
                     <input 
                         type="text" 
-                        name="title" 
-                        value={this.state.info.title} 
+                        name="info.title" 
                         placeholder="Production Title"
+                        onChange={this.handleChange}
                     />
                     <label>Media Type aka feature, music video, etc.</label>
                     <input 
                         type="text" 
-                        name="mediaType" 
-                        value={this.state.info.mediaType} 
+                        name="info.mediaType" 
                         placeholder="Production Type"
+                        onChange={this.handleChange}
                     />
                     <label>Production Logo/Graphic</label>
                     <input 
                         type="text" 
-                        name="logo" 
-                        value={this.state.info.logo} 
+                        name="info.logo" 
                         placeholder="Production Logo/Graphic URL"
-                    />
-                    <label>Total Days</label>
-                    <input 
-                        type="text" 
-                        name="days" 
-                        value={this.state.info.days} 
-                        placeholder="Total Days"
-                    />
-                    <label>Day Out of Days</label>
-                    <input 
-                        type="text" 
-                        name="dOOD" 
-                        value={this.state.info.dOOD} 
-                        placeholder="Day Out of Days"
+                        onChange={this.handleChange}
                     />
                 </segment>
 
@@ -82,86 +64,47 @@ class CreateProductionForm extends Component {
                     <label>Production Co. Name</label>   
                     <input 
                         type="text" 
-                        name="name"
-                        value={this.state.productionCo.name}
+                        name="productionCo.name"
                         placeholder="Production Co. Name"
+                        onChange={this.handleChange}
                     />
                     <label>Production Co. Address</label>   
                     <input 
                         type="text" 
-                        name="address"
-                        value={this.state.productionCo.address}
-                        placeholder="Production Co. Addresss"
+                        name="productionCo.address"
+                        placeholder="Production Co. Address"
+                        onChange={this.handleChange}
                     />
                     <label>Production Co. Phone</label>   
                     <input 
                         type="text" 
-                        name="phone"
-                        value={this.state.productionCo.phoneNum}
+                        name="productionCo.phone"
                         placeholder="Production Co. Phone #"
+                        onChange={this.handleChange}
                     />
                     <label>Production Co. Name</label>   
                     <input 
                         type="text" 
-                        name="logo"
-                        value={this.state.productionCo.logo}
+                        name="productionCo.logo"
                         placeholder="Production Co. Logo URL"
+                        onChange={this.handleChange}
                     />
                 </segment>  
                 <segment className="PoC">
                     <label>Point of Contact</label>
                     <input
                         type="text"
-                        name="name"
-                        value={this.state.pointOfContact.name}
+                        name="pointOfContact.name"
                         placeholder="Company's Point of Contact"
+                        onChange={this.handleChange}
                     />
                     <label>PoC Phone #</label>
                     <input
                         type="text"
-                        name="phoneNum"
-                        value={this.state.pointOfContact.phoneNum}
-                        placeholder="Point of Contact Phone #"
+                        name="pointOfContact.phoneNum"
+                        onChange={this.handleChange}
                     />
                 </segment>
-
-                <segment className="quick-Reference-Times">
-                    <label>General Call Time</label>
-                    <input
-                        type="text"
-                        name="crewCall"
-                        value={this.state.quickRefTimes.crewCall}
-                        placeholder="General Call Time"
-                    /> 
-                    <label>Shooting Call Time</label>
-                    <input
-                        type="text"
-                        name="shootingCall"
-                        value={this.state.quickRefTimes.shootingCall}
-                        placeholder="Shooting Call Time"
-                    /> 
-                    <label>Lunch</label>
-                    <input
-                        type="text"
-                        name="lunch"
-                        value={this.state.quickRefTimes.lunch}
-                        placeholder="Lunch Time"
-                    /> 
-                    <label>2nd Meal Time</label>
-                    <input
-                        type="text"
-                        name="secondMeal"
-                        value={this.state.quickRefTimes.secondMeal}
-                        placeholder="2nd Meal Time"
-                    />   
-                    <label>Est Wrap Time</label>
-                    <input
-                        type="text"
-                        name="estimatedWrap"
-                        value={this.state.quickRefTimes.estimatedWrap}
-                        placeholder="Estimated Wrap Time"
-                    /> 
-                </segment>  
                 <button type='Submit'>Create Production</button>
             </form>
         </div>

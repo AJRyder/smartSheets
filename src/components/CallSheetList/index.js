@@ -59,6 +59,17 @@ function CallSheetList(props){
                                 <div>{callSheet.shootLocations.nearestHospital.phoneNum}</div>
                             </div>
                         </div>
+                        <div classname="Quick-Reference-Times">
+                            <div>{callSheet.quickRefTimes.crewCall}</div>
+                            <div>{callSheet.quickRefTimes.shootingCall}</div>
+                            <div>{callSheet.quickRefTimes.lunch}</div>
+                            <div>{callSheet.quickRefTimes.secondMeal}</div>
+                            <div>{callSheet.quickRefTimes.estimatedWrap}</div>
+                        </div>
+                        <div classname="Day-Count">
+                            <div>{callSheet.dayCount.totalDays}</div>
+                            <div>{callSheet.dayCount.dOOD}</div>
+                        </div>
                     </div>
                     <div className='extras'>
                         <button onClick={() => this.state.deleteCallSheet(callSheet.id)}>Delete CallSheet</button>

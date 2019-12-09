@@ -79,22 +79,42 @@ class App extends Component {
           : null
         }
         <h1>Hello {this.state.message}!</h1>
-        <h1>Hey Dude!</h1>
-     
 
-        <input type='file' onChange={this.addProfilePicture} accept='image/*'/>
+        <input 
+          type='file' 
+          onChange={this.addProfilePicture} 
+          accept='image/*'
+        />
         <SignInWithGoogle doSetCurrentUser={this.doSetCurrentUser}/>
         <CallSheetList callSheets={[]}/>
         <ProductionList productions={[]}/>
 
         <Switch>
-          <Route exact path={ROUTES.HOME} render={() => <div>home</div>}/>
-          <Route exact path={ROUTES.LOGIN} component={Login}/>
-          <Route exact path={ROUTES.RESETPWD} component={ResetPassword}/>
-          <Route exact path={ROUTES.SIGN_UP} component={SignUpWithEmailPassWord}/>
+          <Route 
+            exact path={ROUTES.HOME} 
+            render={() => <div>home</div>}
+          />
+          <Route 
+            exact path={ROUTES.LOGIN} 
+            component={Login}
+          />
+          <Route 
+            exact path={ROUTES.RESETPWD} 
+            component={ResetPassword}
+          />
+          <Route 
+            exact path={ROUTES.SIGN_UP} 
+            component={SignUpWithEmailPassWord}
+          />
 
-          <Route exact path={ROUTES.CALLSHEETS} component={CallSheetList}/>
-          <Route exact path={ROUTES.PRODUCTIONS} component={ProductionList}/>
+          <Route 
+            exact path={ROUTES.CALLSHEETS} 
+            component={CallSheetContainer}
+          />
+          <Route 
+            exact path={ROUTES.PRODUCTIONS} 
+            component={ProductionContainer}
+          />
         </Switch>  
       </div>
     );
