@@ -23,7 +23,7 @@ const callSheetSchema = new Schema({
         talentId: String, 
         avatar: String, 
         role: String, 
-        isBgTalent: Boolean,
+        isBgTalent: String,
 
         callTimes: { 
             pickUp: String, 
@@ -59,5 +59,5 @@ const callSheetSchema = new Schema({
     }
 })
 
-const CallSheet = mongoose.model('Crews', callSheetSchema)
+const CallSheet = mongoose.model('CallSheets', callSheetSchema)
 module.exports = CallSheet; 

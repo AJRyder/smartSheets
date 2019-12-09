@@ -6,8 +6,8 @@ const productionSchema = new Schema({
         title: String, 
         mediaType: String, 
         logo: String,
-        days: Number, 
-        dOOD: Number, 
+        days: String, 
+        dOOD: String, 
     },
 
     productionCo: { 

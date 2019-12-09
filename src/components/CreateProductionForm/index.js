@@ -6,8 +6,8 @@ class CreateProductionForm extends Component {
             title: '', 
             type: '', 
             logo: '',
-            days: 0, 
-            dayOutOfDays: 0, 
+            days: '', 
+            dayOutOfDays: '', 
         },
     
         productionCo: { 
@@ -29,11 +29,7 @@ class CreateProductionForm extends Component {
             secondMeal: '', 
             estimatedWrap: ''
         },
-
-        callSheetList: [{
-            type: mongoose.Schema.Types.ObjectId, 
-            ref: 'CallSheets'
-        }]
+        callSheetList: []
     }
     handleChange = (e) => { 
         this.setState({[e.currentTarget.name]: e.currentTarget.value})
@@ -78,7 +74,7 @@ class CreateProductionForm extends Component {
                         type="text" 
                         name="dOOD" 
                         value={this.state.info.dOOD} 
-                        placeholder="Total Days"
+                        placeholder="Day Out of Days"
                     />
                 </segment>
 

@@ -1,7 +1,13 @@
 import React, {Component} from 'react'; 
+import ReactDataSheet from 'react-datasheet'
+import 'react-datasheet/lib/react-datasheet.css'
 
 class CreateCallSheet extends Component { 
     state = { 
+        grid: [
+            [{value:  1}, {value:  3}],
+            [{value:  2}, {value:  4}]
+          ],
         crew: { 
             department: '',
             position: '', 
@@ -20,7 +26,7 @@ class CreateCallSheet extends Component {
             talentId: '', 
             avatar: '',
             role: '', 
-            isBgTalent: null, 
+            isBgTalent: '', 
             callTimes: { 
                 pickUp: '', 
                 call: '', 
@@ -57,6 +63,17 @@ class CreateCallSheet extends Component {
     render(){
         return(
         <div className="Create-CallSheet-Container">
+            <ReactDataSheet
+                data={this.state.grid}
+                valueRenderer={(cell) => cell.value}
+                onCellsChanged={changes => {
+                    const grid = this.state.grid.map(row => [...row])
+                    changes.forEach(({cell, row, col, value}) => {
+                        grid[row][col] = {...grid[row][col], value}
+                    })
+                    this.setState({grid})
+                    }}
+            />
             <h4>Create a New CallSheet</h4>
             <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
                 <segment className="create-crew">
@@ -155,10 +172,10 @@ class CreateCallSheet extends Component {
                     />
                      <label>Background Talent?</label>
                     <input 
-                        type="checkbox" 
+                        type="text" 
                         name="isBgTalent" 
                         value={this.state.talent.isBgTalent}
-                        placeholder=""
+                        placeholder="Is Background Talent?"
                     />
                     <label>--Talent Call Times--</label><br/>
                     <label>Pick Up Time</label>

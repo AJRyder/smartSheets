@@ -1,8 +1,8 @@
-import React from 'react'
-import { ClipLoader } from 'react-spinners'
+import React, { Component } from 'react'
 
 
 function ProductionList(props) {
+    console.log(props, "this is the props")
     const productions = props.productions.map((production) => {
         return( 
             <div key={production.id}>
@@ -30,6 +30,10 @@ function ProductionList(props) {
                         <div>{production.quickRefTimes.lunch}</div>
                         <div>{production.quickRefTimes.secondMeal}</div>
                         <div>{production.quickRefTimes.estimatedWrap}</div>
+                    </div>
+                    <div className='extras'>
+                        <button onClick={() => this.state.deleteProduction(production.id)}>Delete Production</button>
+                         <button onClick={() => this.state.openAndEdit(production)}>Edit Production</button>
                     </div>
                     <div className="all-callsheets"></div>
                         <div>{production.callSheetList}</div>

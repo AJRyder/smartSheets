@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from "react-sidebar";
+
+
 import { Route, Switch } from 'react-router-dom'
 
 import NavBar from './components/NavBar'
@@ -8,14 +10,14 @@ import SignUpWithEmailPassWord from './components/SignUpWithEmailPassword'
 import Login from './components/Login'
 import ResetPassword from './components/ResetPassword'
 
+import CallSheetList from './components/CallSheetList'
 import CallSheetContainer from './components/CallSheetContainer'
-import CallSheetList from './components/CallSheetList';
+
+import ProductionContainer from './components/ProductionContainer'
+import ProductionList from './components/ProductionList';
 
 import * as ROUTES from './constants/routes'
 import { firebase, doAddFile, auth, doSignOut, doSignInWithEmailAndPassWord } from './firebase/firebase'
-
-
-
 
 import './App.css';
 
@@ -82,15 +84,17 @@ class App extends Component {
 
         <input type='file' onChange={this.addProfilePicture} accept='image/*'/>
         <SignInWithGoogle doSetCurrentUser={this.doSetCurrentUser}/>
-        <h1>gwlo</h1>
-        <CallSheetList />
+        <CallSheetList callSheets={[]}/>
+        <ProductionList productions={[]}/>
+
         <Switch>
           <Route exact path={ROUTES.HOME} render={() => <div>home</div>}/>
           <Route exact path={ROUTES.LOGIN} component={Login}/>
           <Route exact path={ROUTES.RESETPWD} component={ResetPassword}/>
           <Route exact path={ROUTES.SIGN_UP} component={SignUpWithEmailPassWord}/>
 
-          <Route exact path={ROUTES.CALLSHEETS} component={CallSheetContainer}/>
+          <Route exact path={ROUTES.CALLSHEETS} component={CallSheetList}/>
+          <Route exact path={ROUTES.PRODUCTIONS} component={ProductionList}/>
         </Switch>  
       </div>
     );

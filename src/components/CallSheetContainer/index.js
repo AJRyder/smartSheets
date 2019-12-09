@@ -25,7 +25,7 @@ class CallSheetContainer extends Component {
                 talentId: '', 
                 avatar: '',
                 role: '', 
-                isBgTalent: null, 
+                isBgTalent: '', 
                 callTimes: { 
                     pickUp: '', 
                     call: '', 

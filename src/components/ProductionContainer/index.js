@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ProductionList from '../ProductionList'
-import CreateProduction from '../CreateProductionForm'
-import { render } from '@testing-library/react'
+import CreateProductionForm from '../CreateProductionForm'
+
 
 class ProductionContainer extends Component { 
     state = { 
@@ -11,8 +11,8 @@ class ProductionContainer extends Component {
                 title: '', 
                 type: '', 
                 logo: '',
-                days: 0, 
-                dayOutOfDays: 0, 
+                days: '', 
+                dOOD: '', 
             },
         
             productionCo: { 
@@ -62,7 +62,7 @@ class ProductionContainer extends Component {
             const createdProductionResponse = await(process.env.REACT_APP_API_URL + '/auth/productions/', {
                 method: 'POST', 
                 credentials: 'include', 
-                body: JSON.stringify(production)
+                body: JSON.stringify(production),
                 headers: { 
                     'Content-Type': 'application/json'
                 }
@@ -143,12 +143,12 @@ class ProductionContainer extends Component {
                 <CreateProductionForm 
                     addProduction={this.addProduction}
                 />
-                <EditCallSheetModal 
+                {/* <EditCallSheetModal 
                     handleEditChange={this.handleEditChange} 
                     open={this.state.showEditModal} 
                     productionToEdit={this.state.productionToEdit} 
                     closeAndEdit={this.closeAndEdit}
-                />
+                /> */}
             </div>
         )
     }

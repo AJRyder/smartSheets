@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { ClipLoader } from 'react-spinners'
+
 
 
 function CallSheetList(props){
-
-    const callSheets = props.callSheets.map((callSheet) => {
+    console.log(props, "this is the props")
+   const callSheets = props.callSheets.map((callSheet) => {
         return ( 
                 
                 <div key={callSheet.id}>
@@ -67,6 +67,7 @@ function CallSheetList(props){
                 </div>
             )
     })
+console.log(props, "this is the props")
     return (
         <div>
             { callSheets }

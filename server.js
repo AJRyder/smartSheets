@@ -1,16 +1,22 @@
-const express = require('express')
-const path = require('path')
+const express       = require('express')
+const app           = express()
+const bodyParser    = require('body-parser')
+const cors          = require('cors')
+const mongoose      = require('mongoose')
+const path          = require('path')
 
-const app = express()
-const PORT = process.env.PORT || 8000
+const PORT          = process.env.PORT || 8000
+
 require('./config/db')
 
-const userController = require('./controllers/users')
-const callSheetController = require('./controllers/CallSheets')
-const productionController = require('./controllers/Productions')
+const userController        = require('./controllers/users')
+const callSheetController   = require('./controllers/CallSheets')
+const productionController  = require('./controllers/Productions')
 
 app.use(express.static(path.join(__dirname, 'build')))
 app.use(express.json())
+app.use(cors())
+app.use(bodyParser.json())
 
 app.use('/auth', userController)
 app.use('/auth', callSheetController)
