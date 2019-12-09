@@ -2,13 +2,10 @@ import React, { Component } from 'react'
 import { ClipLoader } from 'react-spinners'
 
 
-class CallSheetList extends Component {
-    state = { 
-        callSheet: []
-    }
-    render() {
-        const callSheets = callSheets.map((callSheet) => {
-            return( 
+function CallSheetList(props){
+
+    const callSheets = props.callSheets.map((callSheet) => {
+        return ( 
                 
                 <div key={callSheet.id}>
                     Yo I'm the callsheetList
@@ -64,19 +61,18 @@ class CallSheetList extends Component {
                         </div>
                     </div>
                     <div className='extras'>
-                        <button onClick={() => state.deleteCallSheet(callSheet.id)}>Delete CallSheet</button>
-                         <button onClick={() => state.openAndEdit(callSheet)}>Edit CallSheet</button>
+                        <button onClick={() => this.state.deleteCallSheet(callSheet.id)}>Delete CallSheet</button>
+                         <button onClick={() => this.state.openAndEdit(callSheet)}>Edit CallSheet</button>
                     </div>
                 </div>
             )
-        })
-        return (
-            <div>
-                { callSheets }
-            </div>
-        )
-
-        }
+    })
+    return (
+        <div>
+            { callSheets }
+        </div>
+    )
 }
+
 
 export default CallSheetList

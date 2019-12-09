@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 
-class CreateProduction extends Component { 
+class CreateProductionForm extends Component { 
     state = { 
         info: {
             title: '', 
@@ -174,4 +174,4 @@ class CreateProduction extends Component {
 }
 
 
-export default CreateProduction
+export default CreateProductionForm

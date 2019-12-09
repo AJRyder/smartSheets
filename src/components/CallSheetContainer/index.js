@@ -161,7 +161,12 @@ class CallSheetContainer extends Component {
             <div>
                 <CallSheetList callSheets={this.state.callSheets} deleteCallSheet={this.deleteCallSheet} openAndEdit={this.openAndEdit}/>
                 <CreateCallSheetForm addCallSheet={this.addCallSheet}/>
-                {/* <EditCallSheetModal handleEditChange={this.handleEditChange} open={this.state.showEditModal} callSheetToEdit={this.state.callSheetToEdit} closeAndEdit={this.closeAndEdit}/> */}
+                {/* <EditCallSheetModal 
+                    handleEditChange={this.handleEditChange} 
+                    open={this.state.showEditModal} 
+                    callSheetToEdit={this.state.callSheetToEdit} 
+                    closeAndEdit={this.closeAndEdit}
+                /> */}
             </div> 
 
         )
