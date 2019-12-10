@@ -37,9 +37,9 @@ class CreateCrew extends Component {
     }
     render(){
         return(
-            <div className="Create-CallSheet-Container">
+            <div className="Create-Crew-Container">
         
-            <h4>Create a New CallSheet</h4>
+            <h4>Create a New Crew Member</h4>
             <form onSubmit={this.handleSubmit}>
                 <segment className="create-crew">
                     <label><strong>Crew Overview</strong></label><br/>

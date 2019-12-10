@@ -61,7 +61,9 @@ class CrewContainer extends Component {
         });
         const deleteCrewParsed = await deleteCrewResponse.json();
         console.log(deleteCrewResponse)
-        this.setState({crews: this.state.crews.filter((crew) => crew._id !== _id)})
+        this.setState({
+            crews: this.state.crews.filter((crew) => crew._id !== _id)
+        })
         console.log(deleteCrewParsed)
     }
     closeAndEdit = async (e) => {
@@ -82,7 +84,7 @@ class CrewContainer extends Component {
                 if(crew._id === editResponseParsed.data.id){
                     crew = editResponseParsed.data
                 }
-                return callSheet
+                return crew
             });
             this.setState({ 
                 showEditModal: false, 
