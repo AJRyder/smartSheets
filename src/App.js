@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Sidebar from "react-sidebar";
-
 
 import { Route, Switch } from 'react-router-dom'
 
@@ -12,7 +10,6 @@ import ResetPassword from './components/ResetPassword'
 
 import CallSheetList from './components/CallSheetList'
 import CallSheetContainer from './components/CallSheetContainer'
-
 import ProductionContainer from './components/ProductionContainer'
 import ProductionList from './components/ProductionList';
 
@@ -21,12 +18,16 @@ import { firebase, doAddFile, auth, doSignOut, doSignInWithEmailAndPassWord } fr
 
 import './App.css';
 
+
 class App extends Component {
-  state = { 
-    message: '', 
-    currentUser: null, 
-    file: null  
-  }
+    state = { 
+      message: '', 
+      currentUser: null, 
+      file: null, 
+    }
+
+
+  // user login functions
   addProfilePicture = event => {
     doAddFile(event.target.files[0])
       .then(file => file.ref.getDownloadURL())

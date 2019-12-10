@@ -308,6 +308,59 @@ class CreateCallSheet extends Component {
                         onChange={this.handleChange}
                         />
                 </segment><br/>
+                <segment className="create-quickRefTimes">
+                    <label>General Crew Call</label>
+                    <input 
+                        type='text'
+                        name='quickRefTimes.crewCall'
+                        placeholder="General Crew Call"
+                        onChange={this.handleChange}
+                    />
+                    <label>Shooting Call Time </label>
+                    <input 
+                        type='text'
+                        name='quickRefTimes.shootingCall'
+                        placeholder="Shooting Call Time"
+                        onChange={this.handleChange}
+                    />
+                    <label>Lunch Time</label>
+                    <input 
+                        type='text'
+                        name='quickRefTimes.lunch'
+                        placeholder="Lunch Time"
+                        onChange={this.handleChange}
+                    />
+                    <label>Second Meal Time</label>
+                    <input 
+                        type='text'
+                        name='quickRefTimes.secondMeal'
+                        placeholder="Second Meal"
+                        onChange={this.handleChange}
+                    />
+                    <label>Estimated Wrap Time</label>
+                    <input 
+                        type='text'
+                        name='quickRefTimes.estimatedWrap'
+                        placeholder="Estimated Wrap time"
+                        onChange={this.handleChange}
+                    />
+                </segment>
+                <segment className="create-dayCount">
+                    <label>Total Days</label>
+                    <input 
+                        type="text"
+                        name="dayCount.totalDays"
+                        placeholder="total days"
+                        onChange={this.handleChange}
+                    />
+                    <label>Day Out of Days</label>
+                        <input 
+                        type="text"
+                        name="dayCount.totalDays"
+                        placeholder="total days"
+                        onChange={this.handleChange}
+                    />
+                </segment>
                 <button type='Submit'>Create CallSheet</button>
             </form>
         </div>    
