@@ -3,7 +3,7 @@ import CreateCrew from '../CreateCrew';
 
 class CrewContainer extends Component {
     state={
-        "crew":
+        "crew": [{
             "department": '',
             "position": '', 
             "contact": { 
@@ -11,6 +11,7 @@ class CrewContainer extends Component {
                 "phoneNum":'', 
                 "email": ''
             }   
+        }]
     }
     componentDidMount(){
         this.getCrew()

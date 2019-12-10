@@ -3,7 +3,7 @@ import ShootLocationContainer from '../ShootLocationContainer';
 
 class CreateShootLocation extends Component { 
     state={ 
-        "shootLocations": { 
+        "shootLocations": [{ 
             "name": '', 
             "address": '', 
             "phoneNum": '', 
@@ -14,7 +14,7 @@ class CreateShootLocation extends Component {
                 "address": '', 
                 "phoneNum": ''
             }
-        }
+        }]
     }
     handleChangeShootLocation = e => { 
         this.setState({
