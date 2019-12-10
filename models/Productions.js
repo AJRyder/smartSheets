@@ -13,10 +13,10 @@ const productionSchema = new Schema({
         phoneNum: String, 
         logo: String
     },
-    pointOfContact: { 
+    pointOfContact: [{ 
         name: String, 
         phoneNum: String, 
-    },
+    }],
     callSheetList: [{
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'CallSheets'

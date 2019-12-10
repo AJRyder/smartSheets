@@ -5,68 +5,68 @@ import CreateCallSheetForm from '../CreateCallSheetForm';
 
 class CallSheetContainer extends Component { 
     state =  {
-        callSheets: [], 
-        callSheetToEdit: { 
-            crew: { 
-                department: '',
-                position: '', 
-                contact: { 
-                    name: '', 
-                    phoneNum: '', 
-                    email: ''
+        "callSheets": [], 
+        "callSheetToEdit": { 
+            "crew": { 
+                "department": '',
+                "position": '', 
+                "contact": { 
+                    "name": '', 
+                    "phoneNum":'', 
+                    "email": ''
                 }   
             }, 
-            client: { 
-                agency: '', 
-                name: '', 
-                phoneNum: ''
+            "client": { 
+                "agency": '', 
+                "name": '', 
+                "phoneNum": ''
             }, 
-            talent: { 
-                talentId: '', 
-                avatar: '',
-                role: '', 
-                isBgTalent: '', 
-                callTimes: { 
-                    pickUp: '', 
-                    call: '', 
-                    onSet: ''
+            "talent": { 
+                "talentId": '', 
+                "avatar": '',
+                "role": '', 
+                "isBgTalent": '', 
+                "callTimes": { 
+                    "pickUp": '', 
+                    "call": '', 
+                    "onSet": ''
                 } , 
-                contact: { 
-                    name: '', 
-                    phoneNum: '', 
-                    email: ''
+                "contact": { 
+                    "name": '', 
+                    "phoneNum": '', 
+                    "email": ''
                 }
             }, 
-            schedule: { 
-                time: '', 
-                sceneNum: '', 
-                description: '', 
-                DorN: ''
+            "schedule": { 
+                "time": '', 
+                "sceneNum": '', 
+                "description": '', 
+                "DorN": ''
             }, 
-            shootLocations: { 
-                name: '', 
-                address: '', 
-                phoneNum: '', 
-                parking: '', 
-                parkingNotes: '', 
-                nearestHospital: { 
-                    name: '', 
-                    address: '', 
-                    phoneNum: ''
+            "shootLocations": { 
+                "name": '', 
+                "address": '', 
+                "phoneNum": '', 
+                "parking": '', 
+                "parkingNotes": '', 
+                "nearestHospital": { 
+                    "name": '', 
+                    "address": '', 
+                    "phoneNum": ''
                 }
             },
-            quickRefTimes: {
-                crewCall: '', 
-                shootingCall: '', 
-                lunch: '', 
-                secondMeal: '', 
-                estimatedWrap: ''
+            "quickRefTimes": {
+                "crewCall": '', 
+                "shootingCall": '', 
+                "lunch": '', 
+                "secondMeal": '', 
+                "estimatedWrap": ''
             },
-            dayCount: {
-                totalDays: '', 
-                dOOD: '',
+            "dayCount": {
+                "totalDays": '', 
+                "dOOD": ''
             },
-            showEditModal: false
+            // showEditModal: false
         } 
     } //end of callsheet state
 
@@ -76,7 +76,7 @@ class CallSheetContainer extends Component {
 
     getCallSheets = async () => { 
         try { 
-            const callSheets = await fetch(process.env.REACT_APP_API_URL + '/auth/callsheets/'
+            const callSheets = await fetch('/callsheets'
             , { 
                 credentials: 'include', 
                 method: 'Get'
@@ -94,7 +94,7 @@ class CallSheetContainer extends Component {
     addCallSheet = async (callSheet) => { 
         console.log(callSheet);
         try { 
-            const createdCallSheetResponse = await fetch(process.env.REACT_APP_API_URL + '/auth/callsheets/'
+            const createdCallSheetResponse = await fetch('/callsheets'
             , {
                 method: 'POST', 
                 credentials: 'include', 
@@ -102,12 +102,14 @@ class CallSheetContainer extends Component {
                 headers: { 
                     'Content-Type': 'application/json'
                 }
-            }); 
+            });
+            console.log(createdCallSheetResponse) 
             const parsedResponse = await createdCallSheetResponse.json(); 
             console.log(parsedResponse, ' this is response')
-            this.setState({callSheets: [...this.state.callSheets, parsedResponse.data]})
+            // this.setState({callSheets: [...this.state.callSheets, parsedResponse.data]})
         } catch(err) {
             console.log(err)
+            console.log(callSheet)
         }
     }
     deleteCallSheet = async (id) => {
@@ -169,6 +171,7 @@ class CallSheetContainer extends Component {
     render(){
         return(
             <div>
+                I'm the callsheet container 
                 <CallSheetList callSheets={this.state.callSheets} deleteCallSheet={this.deleteCallSheet} openAndEdit={this.openAndEdit}/>
                 <CreateCallSheetForm addCallSheet={this.addCallSheet}/>
                 {/* <EditCallSheetModal 

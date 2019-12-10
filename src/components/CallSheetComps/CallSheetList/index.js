@@ -8,7 +8,7 @@ function CallSheetList(props){
         return ( 
                 
                 <div key={callSheet.id}>
-                    Yo I'm the callsheetList
+                   
                     <div className="CallSheet-Content">
                         <div className="Crew-Overview">
                             <div>{callSheet.crew.department}</div>
@@ -75,14 +75,16 @@ function CallSheetList(props){
                         <button onClick={() => this.state.deleteCallSheet(callSheet.id)}>Delete CallSheet</button>
                          <button onClick={() => this.state.openAndEdit(callSheet)}>Edit CallSheet</button>
                     </div>
+                    
                 </div>
             )
-    })
-console.log(props, "this is the props")
-    return (
-        <div>
-            { callSheets }
-        </div>
+        })
+        console.log(props, "this is the props")
+        return (
+            <div>
+                Yo I'm the callsheetList
+                { callSheets }
+            </div>
     )
 }
 

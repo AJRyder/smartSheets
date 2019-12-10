@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Production = require('../models/Production')
+const Production = require('../models/Productions')
 
 router.get('/productions', (req, res) => {
     return res.send('GET HTTP method on user resource');

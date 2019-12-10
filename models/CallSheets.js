@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema; 
 
 const callSheetSchema = new Schema({
-    crew: { 
+    crew: [{ 
         department: String, 
         position: String,
         callTimes: String, 
@@ -11,7 +11,7 @@ const callSheetSchema = new Schema({
             phoneNum: String, 
             email: String, 
         },
-    },
+    }],
 
     client: { 
         agency: String, 
@@ -19,7 +19,7 @@ const callSheetSchema = new Schema({
         phoneNum: String
     }, 
 
-    talent: {
+    talent: [{
         talentId: String, 
         avatar: String, 
         role: String, 
@@ -36,16 +36,16 @@ const callSheetSchema = new Schema({
             phoneNum: String, 
             email: String, 
         }
-    },
+    }],
 
-    schedule: { 
+    schedule: [{ 
         time: String, 
         sceneNum: String, 
         description: String, 
         DorN: String,  
-    },
+    }],
 
-    shootLocations: { 
+    shootLocations: [{ 
         name: String, 
         address: String, 
         phoneNum: String, 
@@ -56,7 +56,7 @@ const callSheetSchema = new Schema({
             address: String, 
             phoneNum: String, 
         }
-    }, 
+    }], 
 
     quickRefTimes: {
         crewCall: String, 
@@ -70,7 +70,6 @@ const callSheetSchema = new Schema({
         totalDays: String, 
         dOOD: String,
     }
-
 })
 
 const CallSheet = mongoose.model('CallSheets', callSheetSchema)

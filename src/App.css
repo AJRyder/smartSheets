@@ -34,3 +34,16 @@
     transform: rotate(360deg);
   }
 }
+.titleHeader {
+  background-color: palevioletred; 
+  margin: 0; 
+}
+.NavBar {
+  background-color: palevioletred;
+  height: 3rem; 
+}
+
+.NavBar a { 
+  color: white; 
+  text-shadow: 3px 3px 3px solid black;
+}

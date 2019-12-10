@@ -1,61 +1,82 @@
 import React, {Component} from 'react'; 
 import ReactDataGrid from 'react-data-grid'
-import 'react-datasheet/lib/react-datasheet.css'
+
 
 class CreateCallSheet extends Component { 
     state = { 
-        crew: { 
-            department: '',
-            position: '', 
-            contact: { 
-                name: '', 
-                phoneNum: '', 
-                email: ''
+       "crew": { 
+            "department": '',
+            "position": '', 
+            "contact": { 
+                "name": '', 
+                "phoneNum": '', 
+                "email": ''
             }   
         }, 
-        client: { 
-            agency: '', 
-            name: '', 
-            phoneNum: ''
+        "client": { 
+            "agency": '', 
+            "name": '', 
+            "phoneNum": ''
         }, 
-        talent: { 
-            talentId: '', 
-            avatar: '',
-            role: '', 
-            isBgTalent: '', 
-            callTimes: { 
-                pickUp: '', 
-                call: '', 
-                onSet: ''
+        "talent": { 
+            "talentId": '', 
+            "avatar": '',
+            "role": '', 
+            "isBgTalent": '', 
+            "callTimes": { 
+                "pickUp": '', 
+                "call": '', 
+                "onSet": ''
             } , 
-            contact: { 
-                name: '', 
-                phoneNum: '', 
-                email: ''
+            "contact": { 
+                "name": '', 
+                "phoneNum": '', 
+                "email": ''
             }
         }, 
-        schedule: { 
-            time: '', 
-            sceneNum: '', 
-            description: '', 
-            DorN: ''
+        "schedule": { 
+            "time": '', 
+            "sceneNum": '', 
+            "description": '', 
+            "DorN": ''
         }, 
-        shootLocations: { 
-            name: '', 
-            address: '', 
-            phoneNum: '', 
-            parking: '', 
-            parkingNotes: '', 
-            nearestHospital: { 
-                name: '', 
-                address: '', 
-                phoneNum: ''
+        "shootLocations": { 
+            "name": '', 
+            "address": '', 
+            "phoneNum": '', 
+            "parking": '', 
+            "parkingNotes": '', 
+            "nearestHospital": { 
+                "name": '', 
+                "address": '', 
+                "phoneNum": ''
             }
         },
     }
     handleChange = (e) => { 
         this.setState({
             [e.currentTarget.name]: e.currentTarget.value
+        })
+    }
+
+    handleChangeCrew = e => {
+        // check if it needs to be stored in contact
+        this.setState({
+                ...this.state,
+                crew: {
+                    ...this.state.crew,
+                    contact: {
+                        ...this.state.crew.contact,
+                        [e.target.name]: e.target.value
+                    }
+                }
+        })
+        this.setState({
+            ...this.state,
+            crew: {
+                ...this.state.crew,
+                [e.target.name]: e.target.value
+            }
         })
     }
 
@@ -68,55 +89,9 @@ class CreateCallSheet extends Component {
         return(
         <div className="Create-CallSheet-Container">
         
-            <h4>Create a New CallSheet</h4>
+            
+        <h4>Create a New CallSheet</h4>
             <form onSubmit={this.handleSubmit}>
-                <segment className="create-crew">
-                    <label><strong>Crew Overview</strong></label><br/>
-                    <label>Department</label>
-                    <input 
-                        type="text" 
-                        name="crew.department" 
-                        placeholder="Crew Department"
-                        onChange={this.handleChange}
-                    />
-                    <label>Position</label>
-                    <input 
-                        type="text" 
-                        name="crew.position" 
-                        placeholder="Crew Position"
-                        onChange={this.handleChange}
-                    />
-                    <label>Crew Call Time</label>
-                    <input 
-                        type="text"
-                        name="crew.callTimes"
-                        placeholder="Call Time"
-                        onChange={this.handleChange}
-                    /><br/>    
-                    <label><strong>Crew Contact Info</strong></label><br/>
-                    <label>Crew Name</label>
-                    <input 
-                        type="text" 
-                        name="crew.contact.name" 
-                        placeholder="Crew Name"
-                        onChange={this.handleChange}
-                    />
-                    <label>Crew Phone</label>
-                    <input 
-                        type="text" 
-                        name="crew.contact.phoneNum" 
-                        placeholder="Crew Phone #"
-                        onChange={this.handleChange}
-                    />
-                    <label>Crew Email</label>
-                    <input 
-                        type="text" 
-                        name="crew.contact.email" 
-                        placeholder="Crew Email"
-                        onChange={this.handleChange}
-                    />
-                </segment><br/>
-
                 <segment className="create-client">
                     <label><strong>Client Overview</strong></label><br/>
                     <label>Client Name</label>
@@ -193,8 +168,8 @@ class CreateCallSheet extends Component {
                         name="talent.callTimes.onSet"
                         placeholder="On Set Time"
                         onChange={this.handleChange}
-                    />
-                    <label><strong>Talent Contact</strong></label> 
+                    /><br/>
+                    <label><strong>Talent Contact</strong></label><br/>
                     <label>Talent Name</label>
                     <input
                         type="text"
@@ -216,7 +191,7 @@ class CreateCallSheet extends Component {
                         placeholder="Talent Email"
                         onChange={this.handleChange}
                     />
-                </segment> 
+                </segment><br/>
 
                 <segment className="create-schedule">
                     <label><strong>Shooting Schedule</strong></label><br/>

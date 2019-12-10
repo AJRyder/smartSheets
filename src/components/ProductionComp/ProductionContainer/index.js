@@ -5,36 +5,36 @@ import CreateProductionForm from '../CreateProductionForm'
 
 class ProductionContainer extends Component { 
     state = { 
-        productions: [], 
-        productionToEdit: { 
-            info: {
-                title: '', 
-                type: '', 
-                logo: '',
-                days: '', 
-                dOOD: '', 
+        "productions": [], 
+        "productionToEdit": { 
+            "info": {
+                "title": '', 
+                "mediaType": '', 
+                "logo": '',
+                "days": '', 
+                "dOOD": '', 
             },
         
-            productionCo: { 
-                name: '', 
-                address: '', 
-                phoneNum: '', 
-                logo: ''
+            "productionCo": { 
+                "name": '', 
+                "address": '', 
+                "phoneNum": '', 
+                "logo": ''
             },
         
-            pointOfContact: { 
-                name: '', 
-                phoneNum: '', 
+            "pointOfContact": { 
+                "name": '', 
+                "phoneNum": '', 
             },
         
-            quickRefTimes: {
-                crewCall: '', 
-                shootingCall: '', 
-                lunch: '', 
-                secondMeal: '', 
-                estimatedWrap: ''
+            "quickRefTimes": {
+                "crewCall": '', 
+                "shootingCall": '', 
+                "lunch": '', 
+                "secondMeal": '', 
+                "estimatedWrap": ''
             },
-            showEditModal: false
+            "showEditModal": false
         }
     }
     componentDidMount(){
@@ -42,9 +42,9 @@ class ProductionContainer extends Component {
     }
     getProductions = async () => { 
         try { 
-            const productions = await fetch(process.env.REACT_APP_API_URL + '/auth/productions/', {
+            const productions = await fetch(process.env.REACT_APP_API_URL + '/productions/', {
                 credentials: 'include', 
-                method: 'Get'
+                method: 'GET'
             });
             const parsedProductions = await productions.json(); 
             console.log(parsedProductions)
@@ -55,11 +55,11 @@ class ProductionContainer extends Component {
             console.log(err)
         }
     }
-    addProduction = async (e, production) => {
-        e.preventDefault(); 
+    addProduction = async (production) => {
+
         console.log(production)
         try { 
-            const createdProductionResponse = await(process.env.REACT_APP_API_URL + '/auth/productions/', {
+            const createdProductionResponse = await(process.env.REACT_APP_API_URL + '/productions', {
                 method: 'POST', 
                 credentials: 'include', 
                 body: JSON.stringify(production),
@@ -69,6 +69,7 @@ class ProductionContainer extends Component {
             });
             const parsedResponse = await createdProductionResponse.json(); 
             console.log(parsedResponse, ' this is response')
+            console.log(createdProductionResponse)
             this.setState({
                 productions: [...this.state.productions, parsedResponse.data]
             })
@@ -135,6 +136,7 @@ class ProductionContainer extends Component {
     render(){ 
         return (
             <div>
+                I'm the production container
                 <ProductionList 
                     productions={this.state.productions} 
                     deleteProduction={this.deleteProduction} 

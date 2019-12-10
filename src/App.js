@@ -8,10 +8,10 @@ import SignUpWithEmailPassWord from './components/SignUpWithEmailPassword'
 import Login from './components/Login'
 import ResetPassword from './components/ResetPassword'
 
-import CallSheetList from './components/CallSheetList'
-import CallSheetContainer from './components/CallSheetContainer'
-import ProductionContainer from './components/ProductionContainer'
-import ProductionList from './components/ProductionList';
+import CallSheetList from './components/CallSheetComps/CallSheetList'
+import CallSheetContainer from './components/CallSheetComps/CallSheetContainer'
+import ProductionContainer from './components/ProductionComp/ProductionContainer'
+import ProductionList from './components/ProductionComp/ProductionList';
 
 import * as ROUTES from './constants/routes'
 import { firebase, doAddFile, auth, doSignOut, doSignInWithEmailAndPassWord } from './firebase/firebase'
@@ -87,8 +87,8 @@ class App extends Component {
           accept='image/*'
         />
         <SignInWithGoogle doSetCurrentUser={this.doSetCurrentUser}/>
-        <CallSheetList callSheets={[]}/>
-        <ProductionList productions={[]}/>
+        {/* <CallSheetList callSheets={[]}/>
+        <ProductionList productions={[]}/> */}
 
         <Switch>
           <Route 

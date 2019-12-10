@@ -19,8 +19,9 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.use('/auth', userController)
-app.use('/auth', callSheetController)
-app.use('/auth', productionController)
+app.use('/', callSheetController)
+app.use('/', productionController)
+
 
 app.get('/hello', (req, res) => { 
     res.json({ message: 'World' })

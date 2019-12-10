@@ -4,7 +4,7 @@ class CreateProductionForm extends Component {
     state = { 
         info: {
             title: '', 
-            type: '', 
+            mediaType: '', 
             logo: '' 
         },
     
@@ -102,6 +102,7 @@ class CreateProductionForm extends Component {
                     <input
                         type="text"
                         name="pointOfContact.phoneNum"
+                        placeholder="POC Phone #"
                         onChange={this.handleChange}
                     />
                 </segment>

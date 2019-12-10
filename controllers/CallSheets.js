@@ -1,15 +1,16 @@
 const express = require('express')
 const router = express.Router()
-const CallSheet = require('../models/CallSheet')
+const CallSheet = require('../models/CallSheets')
 
 router.get('/callsheets', (req, res) => {
     return res.send('GET HTTP method on user resource');
 });
 
 router.post('/callsheets', async (req, res) => {
+    console.log('WQE ARE HITTING HERE!!!', req.body)
     try { 
-        const createdCallSheet = await CallSheet.create(req.body)
-        res.json(createdCallSheet)
+        // const createdCallSheet = await CallSheet.create(req.body)
+        // res.json(createdCallSheet)
     } catch(error) { 
         console.log(error)
     }
