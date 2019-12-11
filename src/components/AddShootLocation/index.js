@@ -78,7 +78,7 @@ class AddShootLocation extends Component {
                     type='text'
                     name='phoneNum'
                     value={shootLocations.phoneNum}
-                    placeholder="Location Name"
+                    placeholder="Location Phone #"
                     onChange={this.handleChange}
                 />
                 <input

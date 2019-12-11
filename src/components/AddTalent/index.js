@@ -81,77 +81,77 @@ class AddTalent extends Component {
         const { talent } = this.state
         return (
             <form onSubmit={this.addTalent}>
-            <input 
-                type='text'
-                name='talentId'
-                value={talent.talentId}
-                placeholder='Cast ID #'
-                onChange={this.handleChange}
-            />
-            <input 
-                type='text'
-                name='avatar'
-                value={talent.avatar}
-                placeholder='avatar pic'
-                onChange={this.handleChange}
-            />
-            <input 
-                type='text'
-                name='role'
-                value={talent.role}
-                placeholder='Role'
-                onChange={this.handleChange}
-            />
-            <input 
-                type='text'
-                name='isBgTalent'
-                value={talent.isBgTalent}
-                placeholder='Is Background Talent?'
-                onChange={this.handleChange}
-            />
-            <input 
-                type='text'
-                name='pickUp'
-                value={talent.callTimes.pickUp}
-                placeholder='Pick Up Time'
-                onChange={this.handleChangeCallTimes}
-            />
-            <input 
-                type='text'
-                name='call'
-                value={talent.callTimes.call}
-                placeholder='Call Time'
-                onChange={this.handleChangeCallTimes}
-            />
-            <input 
-                type='text'
-                name='onSet'
-                value={talent.callTimes.onSet}
-                placeholder='On Set Time'
-                onChange={this.handleChangeCallTimes}
-            />
-            <input 
-                type='text'
-                name='name'
-                value={talent.contact.name}
-                placeholder='Talent Name'
-                onChange={this.handleChangeContact}
-            />
-            <input 
-                type='text'
-                name='phoneNum'
-                value={talent.contact.phoneNum}
-                placeholder='Talent Phone #'
-                onChange={this.handleChangeContact}
-            />
-            <input 
-                type='text'
-                name='email'
-                value={talent.contact.email}
-                placeholder='Talent Email'
-                onChange={this.handleChangeContact}
-            />
-            <button type='submit'>Add Talent</button>
+                <input 
+                    type='text'
+                    name='talentId'
+                    value={talent.talentId}
+                    placeholder='Cast ID #'
+                    onChange={this.handleChange}
+                />
+                <input 
+                    type='text'
+                    name='avatar'
+                    value={talent.avatar}
+                    placeholder='avatar pic'
+                    onChange={this.handleChange}
+                />
+                <input 
+                    type='text'
+                    name='role'
+                    value={talent.role}
+                    placeholder='Role'
+                    onChange={this.handleChange}
+                />
+                <input 
+                    type='text'
+                    name='isBgTalent'
+                    value={talent.isBgTalent}
+                    placeholder='Is Background Talent?'
+                    onChange={this.handleChange}
+                />
+                <input 
+                    type='text'
+                    name='pickUp'
+                    value={talent.callTimes.pickUp}
+                    placeholder='Pick Up Time'
+                    onChange={this.handleChangeCallTimes}
+                />
+                <input 
+                    type='text'
+                    name='call'
+                    value={talent.callTimes.call}
+                    placeholder='Call Time'
+                    onChange={this.handleChangeCallTimes}
+                />
+                <input 
+                    type='text'
+                    name='onSet'
+                    value={talent.callTimes.onSet}
+                    placeholder='On Set Time'
+                    onChange={this.handleChangeCallTimes}
+                />
+                <input 
+                    type='text'
+                    name='name'
+                    value={talent.contact.name}
+                    placeholder='Talent Name'
+                    onChange={this.handleChangeContact}
+                />
+                <input 
+                    type='text'
+                    name='phoneNum'
+                    value={talent.contact.phoneNum}
+                    placeholder='Talent Phone #'
+                    onChange={this.handleChangeContact}
+                />
+                <input 
+                    type='text'
+                    name='email'
+                    value={talent.contact.email}
+                    placeholder='Talent Email'
+                    onChange={this.handleChangeContact}
+                />
+                <button type='submit'>Add Talent</button>
             </form>
         )
     }

@@ -5,6 +5,9 @@ import AddShootLocation from '../../AddShootLocation';
 import AddSchedule from '../../AddSchedule';
 import AddClient from '../../AddClient';
 import ShowCrew from "../../ShowCrew";
+import ShowTalent from '../../ShowTalent'
+import ShowSchedule from '../../ShowSchedule'
+import ShowShootLocation from '../../ShowShootLocation'
 
 class CreateCallSheet extends Component { 
 
@@ -69,7 +72,15 @@ class CreateCallSheet extends Component {
                            return <div>{c.department}{c.position}</div>         
                         })
                     } */}
+                    <ShowShootLocation shootLocations={this.state.shootLocations}/>
+                    <AddShootLocation addToCallSheetLocation={this.addToCallSheetLocation}/>
+                    <ShowSchedule schedule={this.state.schedule}/>
+                    <AddSchedule addToCallSheetSchedule={this.addToCallSheetSchedule}/>
                     <ShowCrew crew={this.state.crew} />
+                    <AddCrew addToCallSheetCrew={this.addToCallSheetCrew}/>
+                    <ShowTalent talent={this.state.talent}/>
+                    <AddTalent addToCallSheetTalent={this.addToCallSheetTalent}/>
+
                 </div>
                 {/* <div className="CrewDisplay">
                     {
@@ -86,10 +97,9 @@ class CreateCallSheet extends Component {
                     }
                 </div> */}
          
-                    <AddCrew addToCallSheetCrew={this.addToCallSheetCrew}/>
-                    <AddTalent addToCallSheetTalent={this.addToCallSheetTalent}/>             
-                    <AddShootLocation addToCallSheetLocation={this.addToCallSheetLocation}/>
-                    <AddSchedule addToCallSheetSchedule={this.addToCallSheetSchedule}/>
+                    
+                                 
+                    
                     <AddClient addToCallSheetClient={this.addToCallSheetClient}/>
                 <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
                     <button type="submit">create CallSheet</button>
