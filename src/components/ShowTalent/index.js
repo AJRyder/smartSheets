@@ -41,7 +41,7 @@ const ShowTalent = ({talent}) => {
     
 
     return (
-        <div>
+      <div className="CallSheet-Data">
             <h2>Talent</h2>
             <BootstrapTable 
                 keyField='id' 

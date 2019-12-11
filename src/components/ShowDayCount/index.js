@@ -5,18 +5,20 @@ import cellEditFactory from 'react-bootstrap-table2-editor';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 const ShowDayCount = ({dayCount}) => {
-    const columns = [{
-        dataField: 'totalDays',
-        text: 'Total Days'
-      },{
-        dataField: 'dOOD',
-        text: 'Day Out of Days'
-      }
+    const columns = [
+            {
+                dataField: 'dOOD',
+                text: 'DooD'
+            },
+            {
+            dataField: 'totalDays',
+            text: 'Total Days'
+            }
     ];
     
 
     return (
-        <div>
+        <div className="CallSheet-Data">
             <h2>Days</h2>
             <BootstrapTable 
                 keyField='id' 

@@ -19,8 +19,8 @@ const ShowClient = ({client}) => {
     
 
     return (
-        <div>
-            <h2>Schedule</h2>
+        <div className="CallSheet-Data">
+            <h2>Agency Info</h2>
             <BootstrapTable 
                 keyField='id' 
                 data={ client } 

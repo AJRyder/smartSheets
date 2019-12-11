@@ -24,7 +24,7 @@ const ShowQuickRefTimes = ({ quickRefTimes }) => {
     ];
 
     return (
-        <div>
+        <div className="CallSheet-Data">
             <h2>Quick Call Times</h2>
             <BootstrapTable 
                 keyField='id' 

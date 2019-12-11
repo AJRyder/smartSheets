@@ -26,7 +26,7 @@ const ShowCrew = ({crew}) => {
     
 
     return (
-        <div>
+      <div className="CallSheet-Data">
             <h2>Crew</h2>
             <BootstrapTable 
                 keyField='id' 

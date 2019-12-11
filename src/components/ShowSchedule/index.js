@@ -22,8 +22,8 @@ const ShowSchedule = ({schedule}) => {
     
 
     return (
-        <div>
-            <h2>Schedule</h2>
+    <div className="CallSheet-Data">
+        <h2>Schedule</h2>
             <BootstrapTable 
                 keyField='id' 
                 data={ schedule } 

@@ -34,7 +34,7 @@ const ShowShootLocation = ({shootLocations}) => {
   
 
     return (
-        <div>
+      <div className="CallSheet-Data">
             <h2>Shooting Locations</h2>
             <BootstrapTable 
                 keyField='id' 
