@@ -5,10 +5,10 @@ import CreateCallSheetForm from '../CreateCallSheetForm';
 
 class CallSheetContainer extends Component { 
     state =  {
-        "callSheets": [], 
-        "callSheetToEdit": { 
-            "crew": { 
-                "department": '',
+        callSheets: [], 
+        callSheetToEdit: { 
+            crew: { 
+                department: '',
                 "position": '', 
                 "contact": { 
                     "name": '', 

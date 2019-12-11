@@ -1,8 +1,10 @@
 import React, {Component} from 'react'; 
-import ReactDataGrid from 'react-data-grid'
-import AddCrew from '../../AddCrew'
+import AddCrew from '../../AddCrew';
 import AddTalent from '../../AddTalent';
-import AddShootLocation from '../../AddShootLocation'
+import AddShootLocation from '../../AddShootLocation';
+import AddSchedule from '../../AddSchedule';
+import AddClient from '../../AddClient';
+
 
 
 class CreateCallSheet extends Component { 
@@ -10,7 +12,9 @@ class CreateCallSheet extends Component {
     state = {
         crew: [], 
         talent: [], 
-        shootLocations: []
+        shootLocations: [], 
+        schedule: [], 
+        client: []
     }
 
     addToCallSheetCrew = crew => {
@@ -28,13 +32,26 @@ class CreateCallSheet extends Component {
             shootLocations: [...this.state.shootLocations, shootLocations]
         })
     }
+    addToCallSheetSchedule = schedule => { 
+        this.setState({
+            schedule: [...this.state.schedule, schedule]
+        })
+    }
+    addToCallSheetClient = client => { 
+        this.setState({
+            client: [...this.state.client, client]
+        })
+    }
     render() {
         console.log(this.state)
         return (
+            
             <div>
                 <AddCrew addToCallSheetCrew={this.addToCallSheetCrew}/>
                 <AddTalent addToCallSheetTalent={this.addToCallSheetTalent}/>             
                 <AddShootLocation addToCallSheetLocation={this.addToCallSheetLocation}/>
+                <AddSchedule addToCallSheetSchedule={this.addToCallSheetSchedule}/>
+                <AddClient addToCallSheetClient={this.addToCallSheetClient}/>
                 <button>create CallSheet</button>
             </div>
         )
