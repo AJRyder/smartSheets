@@ -1,14 +1,20 @@
 import React, {Component} from 'react'; 
+
 import AddCrew from '../../AddCrew';
 import AddTalent from '../../AddTalent';
 import AddShootLocation from '../../AddShootLocation';
 import AddSchedule from '../../AddSchedule';
 import AddClient from '../../AddClient';
+import AddQuickRefTimes from '../../AddQuickRefTimes';
+import AddDayCount from '../../AddDayCount';
+
 import ShowCrew from "../../ShowCrew";
-import ShowTalent from '../../ShowTalent'
-import ShowSchedule from '../../ShowSchedule'
-import ShowShootLocation from '../../ShowShootLocation'
-import ShowClient from '../../ShowClient'
+import ShowTalent from '../../ShowTalent';
+import ShowSchedule from '../../ShowSchedule';
+import ShowShootLocation from '../../ShowShootLocation';
+import ShowClient from '../../ShowClient';
+import ShowQuickRefTimes from '../../ShowQuickRefTimes';
+import ShowDayCount from '../../ShowDayCount';
 
 class CreateCallSheet extends Component { 
 
@@ -17,7 +23,9 @@ class CreateCallSheet extends Component {
             talent: [], 
             shootLocations: [], 
             schedule: [], 
-            client: []
+            client: [], 
+            quickRefTimes: '', 
+            dayCount: ''
     }
 
     getCallsheet = async(e) => {
@@ -51,13 +59,22 @@ class CreateCallSheet extends Component {
             client: [...this.state.client, client]
         })
     }
+    addToCallSheetQuickRefTimes = quickRefTimes => {
+        this.setState({
+            quickRefTimes: [...this.state.quickRefTimes, quickRefTimes]
+        })
+    }
+    addToCallSheetDayCount = dayCount => { 
+        this.setState({
+            dayCount: [...this.state.dayCount, dayCount]
+        })
+    }
 
     doAddCallSheet = async () => {
         const callsheet = await fetch(`/callsheets`, {
             body: JSON.stringify(this.state),
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
               },
         })
     }
@@ -68,6 +85,10 @@ class CreateCallSheet extends Component {
                 
             <div>
                 <div className="CallSheetDisplay">
+                    <ShowDayCount dayCount={this.state.dayCount}/>
+                    <AddDayCount addToCallSheetDayCount={this.addToCallSheetDayCount}/>
+                    <ShowQuickRefTimes quickRefTimes={this.state.quickRefTimes}/>
+                    <AddQuickRefTimes addToCallSheetQuickRefTimes={this.addToCallSheetQuickRefTimes}/>
                     <ShowClient client={this.state.client}/>
                     <AddClient addToCallSheetClient={this.addToCallSheetClient}/>
                     <ShowShootLocation shootLocations={this.state.shootLocations}/>
