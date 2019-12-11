@@ -8,6 +8,7 @@ import ShowCrew from "../../ShowCrew";
 import ShowTalent from '../../ShowTalent'
 import ShowSchedule from '../../ShowSchedule'
 import ShowShootLocation from '../../ShowShootLocation'
+import ShowClient from '../../ShowClient'
 
 class CreateCallSheet extends Component { 
 
@@ -66,12 +67,9 @@ class CreateCallSheet extends Component {
             return (
                 
             <div>
-                <div className="CrewDisplay">
-                    {/* {
-                        this.state.crew.map(c => {
-                           return <div>{c.department}{c.position}</div>         
-                        })
-                    } */}
+                <div className="CallSheetDisplay">
+                    <ShowClient client={this.state.client}/>
+                    <AddClient addToCallSheetClient={this.addToCallSheetClient}/>
                     <ShowShootLocation shootLocations={this.state.shootLocations}/>
                     <AddShootLocation addToCallSheetLocation={this.addToCallSheetLocation}/>
                     <ShowSchedule schedule={this.state.schedule}/>
@@ -80,31 +78,10 @@ class CreateCallSheet extends Component {
                     <AddCrew addToCallSheetCrew={this.addToCallSheetCrew}/>
                     <ShowTalent talent={this.state.talent}/>
                     <AddTalent addToCallSheetTalent={this.addToCallSheetTalent}/>
-
                 </div>
-                {/* <div className="CrewDisplay">
-                    {
-                        this.state.crew.map(c => {
-                           return <div>{c.crew.position}</div>               
-                        })
-                    }
-                </div> */}
-                {/* <div className="CrewDisplay">
-                    {
-                        this.state.crew.map(c => {
-                           return <div>{c.contact.name}{c.contact.phoneNum}{c.contact.email}</div>                             
-                        })
-                    }
-                </div> */}
-         
-                    
-                                 
-                    
-                    <AddClient addToCallSheetClient={this.addToCallSheetClient}/>
                 <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
                     <button type="submit">create CallSheet</button>
                 </form>
-                {/* <button onClick={this.doAddCallSheet}>Test</button> */}
             </div>
         )
     }
