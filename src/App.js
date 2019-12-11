@@ -79,7 +79,6 @@ class App extends Component {
             
           : null
         }
-        <h1>Hello {this.state.message}!</h1>
 
         <input 
           type='file' 

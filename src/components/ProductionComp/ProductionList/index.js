@@ -43,7 +43,6 @@ function ProductionList(props) {
     })
     return (
         <div>
-            Yo I'm the production list 
             { productions }
         </div>
     )

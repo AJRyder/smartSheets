@@ -2,38 +2,29 @@ import React, { Component } from 'react'
 
 class AddCrew extends Component {
     state ={
-        crew: {
-            department: '',
-            position: '', 
-            contact: { 
+        department: '',
+        position: '', 
+        contact: { 
                 name: '', 
                 phoneNum:'', 
                 email: ''
             }   
-        }
     }
 
     handleChangeContact = e => {
         this.setState({
-            ...this.state, 
-            crew: { 
-                ...this.state.crew, 
+                ...this.state, 
                 contact: {
-                    ...this.state.crew.contact, 
+                    ...this.state.contact, 
                     [e.target.name]: e.target.value
                 }
-            }
-        })
+            })
     }
     handleChange = e => {
         this.setState({
             ...this.state,
-            crew: {
-                ...this.state.crew,
                 [e.target.name]: e.target.value
-            }
-        })
-
+            })
     }
 
 
@@ -60,35 +51,35 @@ class AddCrew extends Component {
                 <input 
                     type='text' 
                     name="department" 
-                    value={crew.department}
+                    value={this.state.department}
                     placeholder="department"
                     onChange={this.handleChange}
                 />
                   <input 
                     type='text' 
                     name="position" 
-                    value={crew.position}
+                    value={this.state.position}
                     placeholder="crew position"
                     onChange={this.handleChange}
                 />
                     <input 
                     type='text' 
                     name="name" 
-                    value={crew.contact.name}
+                    value={this.state.contact.name}
                     placeholder="crew name"
                     onChange={this.handleChangeContact}
                 /> 
                    <input 
                     type='text' 
                     name="phoneNum" 
-                    value={crew.contact.phoneNum}
+                    value={this.state.contact.phoneNum}
                     placeholder="crew phone #"
                     onChange={this.handleChangeContact}
                 />
                    <input 
                     type='text' 
                     name="email" 
-                    value={crew.contact.email}
+                    value={this.state.contact.email}
                     placeholder="crew email"
                     onChange={this.handleChangeContact}
                 />

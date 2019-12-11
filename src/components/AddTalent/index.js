@@ -57,7 +57,7 @@ class AddTalent extends Component {
     }
     addTalent = (e) => {
         e.preventDefault()
-        this.props.addToCallSheetTalent(this.state)
+        this.props.addToCallSheetTalent(this.state.talent)
         this.setState({
             talent: { 
                 talentId: '', 

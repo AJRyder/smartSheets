@@ -9,62 +9,62 @@ class CallSheetContainer extends Component {
         callSheetToEdit: { 
             crew: { 
                 department: '',
-                "position": '', 
-                "contact": { 
-                    "name": '', 
-                    "phoneNum":'', 
-                    "email": ''
+                position: '', 
+                contact: { 
+                    name: '', 
+                    phoneNum:'', 
+                    email: ''
                 }   
             }, 
-            "client": { 
-                "agency": '', 
-                "name": '', 
-                "phoneNum": ''
+            client: { 
+                agency: '', 
+                name: '', 
+                phoneNum: ''
             }, 
-            "talent": { 
-                "talentId": '', 
-                "avatar": '',
-                "role": '', 
-                "isBgTalent": '', 
-                "callTimes": { 
-                    "pickUp": '', 
-                    "call": '', 
-                    "onSet": ''
+            talent: { 
+                talentId: '', 
+                avatar: '',
+                role: '', 
+                isBgTalent: '', 
+                callTimes: { 
+                    pickUp: '', 
+                    call: '', 
+                    onSet: ''
                 } , 
-                "contact": { 
-                    "name": '', 
-                    "phoneNum": '', 
-                    "email": ''
+                contact: { 
+                    name: '', 
+                    phoneNum: '', 
+                    email: ''
                 }
             }, 
-            "schedule": { 
-                "time": '', 
-                "sceneNum": '', 
-                "description": '', 
-                "DorN": ''
+            schedule: { 
+                time: '', 
+                sceneNum: '', 
+                description: '', 
+                DorN: ''
             }, 
-            "shootLocations": { 
-                "name": '', 
-                "address": '', 
-                "phoneNum": '', 
-                "parking": '', 
-                "parkingNotes": '', 
-                "nearestHospital": { 
-                    "name": '', 
-                    "address": '', 
-                    "phoneNum": ''
+            shootLocations: { 
+                name: '', 
+                address: '', 
+                phoneNum: '', 
+                parking: '', 
+                parkingNotes: '', 
+                nearestHospital: { 
+                    name: '', 
+                    address: '', 
+                    phoneNum: ''
                 }
             },
-            "quickRefTimes": {
-                "crewCall": '', 
-                "shootingCall": '', 
-                "lunch": '', 
-                "secondMeal": '', 
-                "estimatedWrap": ''
+            quickRefTimes: {
+                crewCall: '', 
+                shootingCall: '', 
+                lunch: '', 
+                secondMeal: '', 
+                estimatedWrap: ''
             },
-            "dayCount": {
-                "totalDays": '', 
-                "dOOD": ''
+            dayCount: {
+                totalDays: '', 
+                dOOD: ''
             },
             // showEditModal: false
         } 
@@ -91,18 +91,19 @@ class CallSheetContainer extends Component {
         }
     }
 
-    addCallSheet = async (callSheet) => { 
-        console.log(callSheet);
+    addCallSheet = async (e, callSheet) => { 
+        e.preventDefault()
+        console.log(callSheet, 'HELLO FROM ADD CALL SHEET!');
         try { 
             const createdCallSheetResponse = await fetch('/callsheets'
             , {
                 method: 'POST', 
-                credentials: 'include', 
                 body: JSON.stringify(callSheet), 
                 headers: { 
                     'Content-Type': 'application/json'
                 }
             });
+
             console.log(createdCallSheetResponse) 
             const parsedResponse = await createdCallSheetResponse.json(); 
             console.log(parsedResponse, ' this is response')
@@ -171,8 +172,6 @@ class CallSheetContainer extends Component {
     render(){
         return(
             <div>
-                I'm the callsheet container 
-                <CallSheetList callSheets={this.state.callSheets} deleteCallSheet={this.deleteCallSheet} openAndEdit={this.openAndEdit}/>
                 <CreateCallSheetForm addCallSheet={this.addCallSheet}/>
                 {/* <EditCallSheetModal 
                     handleEditChange={this.handleEditChange} 

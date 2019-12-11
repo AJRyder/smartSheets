@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema; 
+const Schema = mongoose.Schema;
+const deepPopulate = require('mongoose-deep-populate')(mongoose) 
 
 const callSheetSchema = new Schema({
     crew: [{ 
@@ -71,6 +72,8 @@ const callSheetSchema = new Schema({
         dOOD: String,
     }
 })
+
+callSheetSchema.plugin(deepPopulate)
 
 const CallSheet = mongoose.model('CallSheets', callSheetSchema)
 module.exports = CallSheet; 

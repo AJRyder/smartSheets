@@ -136,7 +136,6 @@ class ProductionContainer extends Component {
     render(){ 
         return (
             <div>
-                I'm the production container
                 <ProductionList 
                     productions={this.state.productions} 
                     deleteProduction={this.deleteProduction} 

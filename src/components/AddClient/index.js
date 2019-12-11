@@ -20,7 +20,7 @@ class AddClient extends Component {
     }
     addClient = (e) => {
         e.preventDefault()
-        this.props.addToCallSheetClient(this.state)
+        this.props.addToCallSheetClient(this.state.client)
         this.setState({
             client: { 
                 agency: '', 

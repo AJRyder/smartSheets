@@ -21,7 +21,7 @@ class AddSchedule extends Component {
     }
     addSchedule = (e) => {
         e.preventDefault()
-        this.props.addToCallSheetSchedule(this.state)
+        this.props.addToCallSheetSchedule(this.state.schedule)
         this.setState({
             schedule: { 
                 time: '', 
