@@ -84,6 +84,9 @@ class CreateCallSheet extends Component {
             return (
                 
             <div>
+                <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
+                    <button className="SubmitBtn" type="submit">Create CallSheet</button>
+                </form>
                 <div className="CallSheetDisplay">
                     <ShowDayCount dayCount={this.state.dayCount}/>
                     <AddDayCount addToCallSheetDayCount={this.addToCallSheetDayCount}/>
@@ -100,9 +103,6 @@ class CreateCallSheet extends Component {
                     <ShowTalent talent={this.state.talent}/>
                     <AddTalent addToCallSheetTalent={this.addToCallSheetTalent}/>
                 </div>
-                <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
-                    <button type="submit">create CallSheet</button>
-                </form>
             </div>
         )
     }

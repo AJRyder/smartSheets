@@ -42,6 +42,7 @@
 }
 .NavBar {
   background-color: dodgerblue;
+  color: white; 
   font-size: 20px; 
   height: 3rem; 
 }
@@ -51,10 +52,22 @@
   text-shadow: 3px 3px 3px solid black;
 }
 .CallSheet-Data { 
-  text-align: center;
-  align-content: center;
-  color: dodgerblue;
+  display: flex;
+  border: 1px solid black; 
+  color: dodgerblue; 
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .User-Info {
   background-color:rgb(98, 98, 191);
+  color: white; 
+}
+
+.SubmitBtn{
+  font-size: 25px;
+}
+.DataBtn{
+  background-color: dodgerblue;
+  color: white; 
 }

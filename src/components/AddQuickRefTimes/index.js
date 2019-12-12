@@ -72,7 +72,7 @@ class AddQuickRefTimes extends Component {
                     placeholder="Est. Wrap Time"
                     onChange={this.handleChange}
                 />
-                <button type='submit'>Add Reference Times</button>
+                <button className="DataBtn" type='submit'>Add Reference Times</button>
             </form>
         )
     }

@@ -151,7 +151,7 @@ class AddTalent extends Component {
                     placeholder='Talent Email'
                     onChange={this.handleChangeContact}
                 />
-                <button type='submit'>Add Talent</button>
+                <button className="DataBtn" type='submit'>Add Talent</button>
             </form>
         )
     }

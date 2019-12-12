@@ -69,16 +69,16 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <div className="User-Info">
-        {
-          currentUser
-          ? <div>
-              {currentUser.displayName}
-              <button onClick={doSignOut}>Sign Out</button>
-              <img src={currentUser.imgUrl} />
-            </div>
-            
-          : null
-        }
+          {
+            currentUser
+            ? <div>
+                {currentUser.displayName}
+                <button onClick={doSignOut}>Sign Out</button>
+                <img src={currentUser.imgUrl} />
+              </div>
+              
+            : null
+          }
           <input 
             type='file' 
             onChange={this.addProfilePicture} 
