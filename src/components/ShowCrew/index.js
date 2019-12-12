@@ -5,7 +5,14 @@ import cellEditFactory from 'react-bootstrap-table2-editor';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 const ShowCrew = ({crew}) => {
-    const columns = [{
+    const columns = [
+      {
+        dataField: 'department',
+        text: 'Department'
+      },{
+        dataField: 'position',
+        text: 'Position'
+      },{
         dataField: 'contact.name',
         text: 'Name'
       },{
@@ -14,14 +21,7 @@ const ShowCrew = ({crew}) => {
       },{
         dataField: 'contact.email',
         text: 'Email'
-      },{
-        dataField: 'department',
-        text: 'Department'
-      },{
-        dataField: 'position',
-        text: 'Position'
       }
-    
     ];
     
 

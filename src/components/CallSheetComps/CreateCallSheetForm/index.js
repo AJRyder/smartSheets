@@ -87,7 +87,7 @@ class CreateCallSheet extends Component {
                 <form onSubmit={(e) => this.props.addCallSheet(e, this.state)}>
                     <button className="SubmitBtn" type="submit">Create CallSheet</button>
                 </form>
-                <div className="CallSheetDisplay">
+                <div className="CallSheetDisplay table-striped">
                     <div>
                         <ShowDayCount dayCount={this.state.dayCount}/>
                         <AddDayCount addToCallSheetDayCount={this.addToCallSheetDayCount}/>

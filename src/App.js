@@ -15,7 +15,7 @@ import ProductionContainer from './components/ProductionComp/ProductionContainer
 import * as ROUTES from './constants/routes'
 import { firebase, doAddFile, auth, doSignOut, doSignInWithEmailAndPassWord } from './firebase/firebase'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { button, Table, TableProps, segment } from 'react-bootstrap';
+
 import './App.css';
 
 
