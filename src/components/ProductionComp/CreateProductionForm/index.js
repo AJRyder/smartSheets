@@ -37,74 +37,74 @@ class CreateProductionForm extends Component {
             <form onSubmit={this.handleSubmit}>
                 <segment className="create-production">
                     <label><strong>Production Overview</strong></label><br/>
-                    <label>Production Title</label>
+                    <label>Production Title</label><br/>
                     <input 
                         type="text" 
                         name="info.title" 
                         placeholder="Production Title"
                         onChange={this.handleChange}
-                    />
-                    <label>Media Type aka feature, music video, etc.</label>
+                    /><br/>
+                    <label>Media Type aka feature, music video, etc.</label><br/>
                     <input 
                         type="text" 
                         name="info.mediaType" 
                         placeholder="Production Type"
                         onChange={this.handleChange}
-                    />
-                    <label>Production Logo/Graphic</label>
+                    /><br/>
+                    <label>Production Logo/Graphic</label><br/>
                     <input 
                         type="text" 
                         name="info.logo" 
                         placeholder="Production Logo/Graphic URL"
                         onChange={this.handleChange}
-                    />
+                    /><br/>
                 </segment>
 
                 <segment className="Production Co Data">
-                    <label>Production Co. Name</label>   
+                    <label>Production Co. Name</label> <br/>  
                     <input 
                         type="text" 
                         name="productionCo.name"
                         placeholder="Production Co. Name"
                         onChange={this.handleChange}
-                    />
-                    <label>Production Co. Address</label>   
+                    /><br/>
+                    <label>Production Co. Address</label> <br/>  
                     <input 
                         type="text" 
                         name="productionCo.address"
                         placeholder="Production Co. Address"
                         onChange={this.handleChange}
-                    />
-                    <label>Production Co. Phone</label>   
+                    /><br/>
+                    <label>Production Co. Phone</label> <br/>  
                     <input 
                         type="text" 
                         name="productionCo.phone"
                         placeholder="Production Co. Phone #"
                         onChange={this.handleChange}
-                    />
-                    <label>Production Co. Name</label>   
+                    /><br/>
+                    <label>Production Co. Name</label>  <br/> 
                     <input 
                         type="text" 
                         name="productionCo.logo"
                         placeholder="Production Co. Logo URL"
                         onChange={this.handleChange}
-                    />
+                    /><br/>
                 </segment>  
                 <segment className="PoC">
-                    <label>Point of Contact</label>
+                    <label>Point of Contact</label><br/>
                     <input
                         type="text"
                         name="pointOfContact.name"
                         placeholder="Company's Point of Contact"
                         onChange={this.handleChange}
-                    />
-                    <label>PoC Phone #</label>
+                    /><br/>
+                    <label>PoC Phone #</label><br/>
                     <input
                         type="text"
                         name="pointOfContact.phoneNum"
                         placeholder="POC Phone #"
                         onChange={this.handleChange}
-                    />
+                    /><br/>
                 </segment>
                 <button type='Submit'>Create Production</button>
             </form>
