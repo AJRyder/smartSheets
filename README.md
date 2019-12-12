@@ -9,7 +9,6 @@ Version 2 is under development and will include the following feature updates:
 - Unified callsheet and productions relational model page
 - User collaborators for group editing and call sheet email list generation 
 - Templates for call sheets so your productions callsheets can be unique
-- 
 
 ## TECHNOLOGIES USED 
 MERN STACK 
