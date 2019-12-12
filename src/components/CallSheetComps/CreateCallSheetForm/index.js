@@ -88,20 +88,32 @@ class CreateCallSheet extends Component {
                     <button className="SubmitBtn" type="submit">Create CallSheet</button>
                 </form>
                 <div className="CallSheetDisplay">
-                    <ShowDayCount dayCount={this.state.dayCount}/>
-                    <AddDayCount addToCallSheetDayCount={this.addToCallSheetDayCount}/>
-                    <ShowQuickRefTimes quickRefTimes={this.state.quickRefTimes}/>
-                    <AddQuickRefTimes addToCallSheetQuickRefTimes={this.addToCallSheetQuickRefTimes}/>
-                    <ShowClient client={this.state.client}/>
-                    <AddClient addToCallSheetClient={this.addToCallSheetClient}/>
-                    <ShowShootLocation shootLocations={this.state.shootLocations}/>
-                    <AddShootLocation addToCallSheetLocation={this.addToCallSheetLocation}/>
-                    <ShowSchedule schedule={this.state.schedule}/>
-                    <AddSchedule addToCallSheetSchedule={this.addToCallSheetSchedule}/>
-                    <ShowCrew crew={this.state.crew} />
-                    <AddCrew addToCallSheetCrew={this.addToCallSheetCrew}/>
-                    <ShowTalent talent={this.state.talent}/>
-                    <AddTalent addToCallSheetTalent={this.addToCallSheetTalent}/>
+                    <div>
+                        <ShowDayCount dayCount={this.state.dayCount}/>
+                        <AddDayCount addToCallSheetDayCount={this.addToCallSheetDayCount}/>
+                    </div>
+                        <ShowQuickRefTimes quickRefTimes={this.state.quickRefTimes}/>
+                        <AddQuickRefTimes addToCallSheetQuickRefTimes={this.addToCallSheetQuickRefTimes}/>
+                    <div>
+                        <ShowClient client={this.state.client}/>
+                        <AddClient addToCallSheetClient={this.addToCallSheetClient}/>
+                    </div>
+                    <div>
+                        <ShowShootLocation shootLocations={this.state.shootLocations}/>
+                        <AddShootLocation addToCallSheetLocation={this.addToCallSheetLocation}/>
+                    </div>
+                    <div>
+                        <ShowSchedule schedule={this.state.schedule}/>
+                        <AddSchedule addToCallSheetSchedule={this.addToCallSheetSchedule}/>
+                    </div>
+                    <div>
+                        <ShowCrew crew={this.state.crew} />
+                        <AddCrew addToCallSheetCrew={this.addToCallSheetCrew}/>
+                    </div>
+                    <div>
+                        <ShowTalent talent={this.state.talent}/>
+                        <AddTalent addToCallSheetTalent={this.addToCallSheetTalent}/>
+                    </div>
                 </div>
             </div>
         )

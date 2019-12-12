@@ -44,7 +44,7 @@ class AddDayCount extends Component {
                    value={dayCount.totalDays}
                    placeholder="Total Days"
                    onChange={this.handleChange}
-               />
+               /><br/>
                 <button className="DataBtn" type='submit'>Add Day Count</button>
             </form>
         )

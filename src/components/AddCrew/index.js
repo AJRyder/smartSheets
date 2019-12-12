@@ -82,7 +82,7 @@ class AddCrew extends Component {
                     value={this.state.contact.email}
                     placeholder="crew email"
                     onChange={this.handleChangeContact}
-                />
+                /><br/>
                 <button className="DataBtn" type='submit'>Add Crew Member</button>
             </form>
         )

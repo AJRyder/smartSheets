@@ -115,7 +115,7 @@ class AddShootLocation extends Component {
                     value={shootLocations.nearestHospital.phoneNum}
                     placeholder="Hospital Phone #"
                     onChange={this.handleChangeHospital}
-                />
+                /><br/>
                 <button className="DataBtn" type='submit'>Add Shoot Location</button>
             </form>
         )

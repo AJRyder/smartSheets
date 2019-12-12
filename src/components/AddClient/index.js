@@ -53,7 +53,7 @@ class AddClient extends Component {
                     value={client.phoneNum}
                     placeholder="Client/Rep Phone #"
                     onChange={this.handleChange}
-                />
+                /><br/>
                 <button className="DataBtn" type='submit'>Add Client Info</button>
             </form>
         )

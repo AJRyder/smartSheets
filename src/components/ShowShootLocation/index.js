@@ -45,7 +45,7 @@ const ShowShootLocation = ({shootLocations}) => {
                     blurToSave: true,
                     afterSaveCell: (oldValue, newValue, row) => {console.log(oldValue, newValue, row)} 
                 })  
-                    } />
+            } />
 
         </div>
     )

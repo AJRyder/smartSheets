@@ -53,7 +53,7 @@
 }
 .CallSheet-Data { 
   display: flex;
-  border: 1px solid black; 
+  border: 3px solid grey; 
   color: dodgerblue; 
   justify-content: center;
   flex-direction: column;
@@ -70,4 +70,28 @@
 .DataBtn{
   background-color: dodgerblue;
   color: white; 
+  font-size: 18px; 
+  margin: 6px 0 0 0 
+}
+tr { 
+  display: flex;
+  justify-content: center;
+  margin: 0 50px 0 50px;
+}
+td { 
+  display: flex;
+  margin: 0 100px 0 100px; 
+  justify-content: center;
+}
+th { 
+  display: flex; 
+  justify-content: center;
+  margin: 0 50px 0 50px; 
+}
+.table-striped{
+  color: grey; 
+}
+
+input { 
+  margin: 0 20px 0 20px
 }

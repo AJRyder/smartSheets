@@ -62,7 +62,7 @@ class AddSchedule extends Component {
                     value={schedule.DorN}
                     placeholder="D/N?" 
                     onChange={this.handleChange}
-                />
+                /><br/>
                 <button className="DataBtn" type='submit'>Add Schedule Item</button>
             </form>
         )

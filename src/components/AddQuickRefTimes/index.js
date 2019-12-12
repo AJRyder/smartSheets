@@ -41,21 +41,21 @@ class AddQuickRefTimes extends Component {
                    type='text'
                    name='crewCall'
                    value={quickRefTimes.crewCall}
-                   placeholder="General Crew Call"
+                   placeholder="Crew Call"
                    onChange={this.handleChange}
                />
                 <input
                     type='text'
                     name='shootingCall'
                     value={quickRefTimes.shootingCall}
-                    placeholder="General Shooting Call"
+                    placeholder="Shooting Call"
                     onChange={this.handleChange}
                 />
                  <input
                     type='text'
                     name='lunch'
                     value={quickRefTimes.lunch}
-                    placeholder="Lunch Time"
+                    placeholder="Lunch"
                     onChange={this.handleChange}
                 />
                 <input
@@ -69,9 +69,9 @@ class AddQuickRefTimes extends Component {
                     type='text'
                     name='estimatedWrap'
                     value={quickRefTimes.estimatedWrap}
-                    placeholder="Est. Wrap Time"
+                    placeholder="Est. Wrap"
                     onChange={this.handleChange}
-                />
+                /><br/>
                 <button className="DataBtn" type='submit'>Add Reference Times</button>
             </form>
         )
