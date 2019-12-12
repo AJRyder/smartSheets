@@ -106,7 +106,7 @@ class CreateProductionForm extends Component {
                         onChange={this.handleChange}
                     /><br/>
                 </segment>
-                <button type='Submit'>Create Production</button>
+                <button className="SubmitBtn" type='Submit'>Create Production</button>
             </form>
         </div>
         )
