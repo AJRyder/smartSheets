@@ -8,10 +8,9 @@ import SignUpWithEmailPassWord from './components/SignUpWithEmailPassword'
 import Login from './components/Login'
 import ResetPassword from './components/ResetPassword'
 
-import CallSheetList from './components/CallSheetComps/CallSheetList'
 import CallSheetContainer from './components/CallSheetComps/CallSheetContainer'
 import ProductionContainer from './components/ProductionComp/ProductionContainer'
-import ProductionList from './components/ProductionComp/ProductionList';
+
 
 import * as ROUTES from './constants/routes'
 import { firebase, doAddFile, auth, doSignOut, doSignInWithEmailAndPassWord } from './firebase/firebase'
@@ -69,6 +68,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
+        <div className="User-Info">
         {
           currentUser
           ? <div>
@@ -79,15 +79,14 @@ class App extends Component {
             
           : null
         }
+          <input 
+            type='file' 
+            onChange={this.addProfilePicture} 
+            accept='image/*'
+          />
+          <SignInWithGoogle doSetCurrentUser={this.doSetCurrentUser}/>
+        </div>
 
-        <input 
-          type='file' 
-          onChange={this.addProfilePicture} 
-          accept='image/*'
-        />
-        <SignInWithGoogle doSetCurrentUser={this.doSetCurrentUser}/>
-        {/* <CallSheetList callSheets={[]}/>
-        <ProductionList productions={[]}/> */}
 
         <Switch>
           <Route 

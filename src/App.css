@@ -35,11 +35,14 @@
   }
 }
 .titleHeader {
-  background-color: palevioletred; 
+  background-color: dodgerblue;
+  color: white; 
+  font-size: 50px;  
   margin: 0; 
 }
 .NavBar {
-  background-color: palevioletred;
+  background-color: dodgerblue;
+  font-size: 20px; 
   height: 3rem; 
 }
 
@@ -49,5 +52,9 @@
 }
 .CallSheet-Data { 
   text-align: center;
-  align-content: center;;
+  align-content: center;
+  color: dodgerblue;
+}
+.User-Info {
+  background-color:rgb(98, 98, 191);
 }

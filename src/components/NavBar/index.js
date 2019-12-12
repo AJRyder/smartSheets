@@ -6,7 +6,7 @@ import * as ROUTES from '../../constants/routes'
 const NavBar = () => { 
     return ( 
         <div>
-            <h2 className='titleHeader'>SmartSheets
+            <h1 className='titleHeader'>SmartSheets</h1>
             <div className="NavBar">
                 <NavLink to={ROUTES.HOME}>HOME | </NavLink>
                 <NavLink to={ROUTES.LOGIN}>LOGIN | </NavLink>
@@ -14,9 +14,7 @@ const NavBar = () => {
                 <NavLink to={ROUTES.PRODUCTIONS}>PRODUCTIONS | </NavLink>
                 <NavLink to={ROUTES.CALLSHEETS}>CALL SHEETS</NavLink>
             </div>
-            </h2>
         </div>
-
     )
 }
 
