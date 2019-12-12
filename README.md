@@ -15,9 +15,10 @@ Version 2 is under development and will include the following feature updates:
 HTML5
 CSS3 
 JavaScript
-
-MERN STACK 
-Mongo | Express | React | NodeJS 
+MongoDb / Mongoose
+Express
+React
+NodeJS 
 
 FireBase (user authentication)
 

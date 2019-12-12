@@ -92,7 +92,9 @@ class App extends Component {
         <Switch>
           <Route 
             exact path={ROUTES.HOME} 
-            render={() => <div>home</div>}
+            render={() => <div>
+                            <h2>Welcome to SmartSheets</h2>
+                          </div>}
           />
           <Route 
             exact path={ROUTES.LOGIN} 

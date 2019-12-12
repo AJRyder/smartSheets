@@ -107,7 +107,7 @@ class CallSheetContainer extends Component {
             console.log(createdCallSheetResponse) 
             const parsedResponse = await createdCallSheetResponse.json(); 
             console.log(parsedResponse, ' this is response')
-            // this.setState({callSheets: [...this.state.callSheets, parsedResponse.data]})
+            this.setState({callSheets: [...this.state.callSheets, parsedResponse.data]})
         } catch(err) {
             console.log(err)
             console.log(callSheet)
